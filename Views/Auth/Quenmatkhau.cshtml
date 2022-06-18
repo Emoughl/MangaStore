@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Quenmatkhau";
+    Layout = "~/Views/Shared/_LayoutManga.cshtml";
+}
+
+<div id="forgotPassword" data-target-group="idForm">
+
+    <header class="border-bottom px-4 px-md-6 py-4">
+        <h2 class="font-size-3 mb-0 d-flex align-items-center"><i class="flaticon-question mr-3 font-size-5"></i>Quên Mật Khẩu</h2>
+    </header>
+
+    <div class="p-4 p-md-6">
+
+        <div class="form-group mb-4">
+            <div class="js-form-message js-focus-state">
+                <label id="signinEmailLabel3" class="form-label" for="signinEmail3">Email  </label>
+                <input type="email" class="form-control rounded-0 height-4 px-4" name="email" id="signinEmail3" placeholder="" aria-label="" aria-describedby="signinEmailLabel3" required>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <button type="submit" class="btn btn-block py-3 rounded-0 btn-dark">Lấy lại Mật Khâu</button>
+        </div>
+        <div class="text-center mb-4">
+            <span class="small text-muted">Bạn đã nhớ mật khẩu?</span>
+            <a class="small" href="/Auth/Dangnhap" >Đăng nhập ngay</a>
+        </div>
+    </div>
+</div>

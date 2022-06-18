@@ -121,11 +121,13 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataManga.cs">
+      <DependentUpon>DataManga.dbml</DependentUpon>
     </Compile>
     <Compile Include="Models\DataManga.designer.cs">
       <AutoGen>True</AutoGen>
@@ -135,6 +137,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\css\custom.css" />
     <Content Include="assets\css\theme.css" />
     <Content Include="assets\favicon.ico" />
     <Content Include="assets\img\1076x761\img1.jpg" />
@@ -358,7 +361,9 @@
     <Content Include="Views\Shared\_LayoutMangaHeader.cshtml" />
     <Content Include="Views\Shared\_LayoutMangaFooter.cshtml" />
     <Content Include="Views\Auth\Index.cshtml" />
-    <Content Include="Views\Auth\Theloai.cshtml" />
+    <Content Include="Views\Auth\Dangky.cshtml" />
+    <Content Include="Views\Auth\Dangnhap.cshtml" />
+    <Content Include="Views\Auth\Quenmatkhau.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

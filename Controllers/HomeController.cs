@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace MangaStore.Controllers
 {
-    public class HomeController : BaseController
+    public class HomeController : Controller
     {
         public ActionResult Index()
         {

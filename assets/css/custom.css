@@ -1,0 +1,62 @@
+﻿.input-wrapper {
+    border: 1px solid #ccc;
+    padding: 0 1.5rem;
+    border-radius: 10px;
+}
+
+    .input-wrapper:focus-within {
+        border: 1px solid #333;
+    }
+    .input-wrapper i {
+        border-right: 1px solid #ccc;
+        padding-right: 5px;
+    }
+    .input-wrapper input {
+        display: inline-block;
+        width: calc(100% - 50px);
+    }
+
+.input-wrapper input {
+    border: none;
+    padding: 0 !important;
+}
+
+.loginbtn {
+    text-align: center;
+}
+
+    .loginbtn .g-signin2 {
+        display: inline-block;
+    }
+
+        .loginbtn .g-signin2 .abcRioButton {
+            height: 36px !important;
+            width: 36px !important;
+            border-radius: 100%;
+        }
+        .loginbtn .g-signin2 .abcRioButton .abcRioButtonContentWrapper {
+            height: 36px;
+            width: 36px;    
+        }    
+    .loginbtn .g-signin2 .abcRioButton .abcRioButtonContentWrapper .abcRioButtonContents {
+            display: none;
+        }
+
+
+        .loginbtn .fb-login-button {
+            display: inline-block;
+        }
+    .loginbtn .fb-login-button .abcRioButton {
+        height: 36px !important;
+        width: 36px !important;
+        border-radius: 100%;
+    }
+
+    .loginbtn .fb-login-button .abcRioButton .abcRioButtonContentWrapper {
+        height: 36px;
+        width: 36px;
+    }
+
+    .loginbtn .fb-login-button .abcRioButton .abcRioButtonContentWrapper .abcRioButtonContents {
+        display: none;
+    }

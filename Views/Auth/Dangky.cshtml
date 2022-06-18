@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "Dangky";
+    Layout = "~/Views/Shared/_LayoutManga.cshtml";
+}
+        <div id="signup" data-target-group="idForm">
+
+            <header class="border-bottom px-4 px-md-6 py-4">
+                <h2 class="font-size-3 mb-0 d-flex align-items-center"><i class="flaticon-resume mr-3 font-size-5"></i>Đăng Ký</h2>
+            </header>
+            @using (Html.BeginForm("Dangky", "Auth"))
+            {
+                <div class="p-4 p-md-6">
+
+                    <div class="form-group mb-4">
+                        <div class="js-form-message js-focus-state">
+                            <label id="signinEmailLabel1" class="form-label" for="signinEmail1">Email</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" class="form-control rounded-0 height-4 px-4" name="email" id="signinEmail1" placeholder="Hãy nhập Email" aria-label="Hãy nhập Email" aria-describedby="signinEmailLabel1" required>
+                            </div>
+                            @ViewData["Loi1"]
+                        </div>
+                    </div>
+
+
+                    <div class="form-group mb-4">
+                        <div class="js-form-message js-focus-state">
+                            <label id="signinPasswordLabel1" class="form-label" for="signinPassword1">Mật Khẩu</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" class="form-control rounded-0 height-4 px-4" name="password" id="signinPassword" placeholder="Hãy Nhập Mật Khẩu" aria-label="Hãy Nhập Mật Khẩu" aria-describedby="signinPasswordLabel1" required>
+                                @ViewData["Loi2"]
+                            </div>
+                            </div>
+                        </div>
+
+
+                    <div class="form-group mb-4">
+                        <div class="js-form-message js-focus-state">
+                            <label id="signupConfirmPasswordLabel" class="form-label" for="signupConfirmPassword">Xác Nhận Mật Khẩu</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-unlock"></i>
+                                <input type="password" class="form-control rounded-0 height-4 px-4" name="confirmPassword" id="signupConfirmPassword" placeholder="Hãy Nhập Lại Mật Khẩu" aria-label="Hãy Nhập Lại Mật Khẩu" aria-describedby="signupConfirmPasswordLabel" required>
+                                </div>
+                            </div>
+                        </div>
+
+                    <div class="mb-3">
+                        <button type="submit" id="signup-btn" class="btn btn-block py-3 rounded-0 btn-dark">Đăng Ký</button>
+                    </div>
+
+                    <div class="text-center mb-4">
+                        <span class="small text-muted">Bạn đã có tài khoản ?</span>
+                        <a class="small" href="/Auth/Dangnhap">Đăng Nhập
+                        </a>
+                    </div>
+
+                    <script>
+                        window.addEventListener('load', () => {
+                            $('#signupConfirmPassword').keyup(e => {
+                                if ($('#signinPassword').val() === e.target.value) {
+                                    $('#signup-btn').prop('disabled', false);
+                                } else {
+                                    $('#signup-btn').prop('disabled', true);
+                                }
+                            });
+                        });
+                    </script>
+                </div>
+            }
+        </div>

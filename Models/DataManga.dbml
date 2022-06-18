@@ -1,64 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Manga" Class="DataMangaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=LAPTOP-2S0CP2JK\SQLEXPRESS01;Initial Catalog=Manga;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="MangaStoreConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.CHAP" Member="CHAPs">
-    <Type Name="CHAP">
-      <Column Name="MaChap" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="ChuongSo" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TenTruyen" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="MaTruyen" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Anhbia" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Association Name="CHAP_HINHANH" Member="HINHANHs" ThisKey="MaChap" OtherKey="MaChap" Type="HINHANH" />
-    </Type>
-  </Table>
-  <Table Name="dbo.HINHANH" Member="HINHANHs">
-    <Type Name="HINHANH">
-      <Column Name="MaHinhAnh" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MaChap" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ChuongSo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="TenTruyen" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="MaTruyen" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Association Name="CHAP_HINHANH" Member="CHAP" ThisKey="MaChap" OtherKey="MaChap" Type="CHAP" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.HuyAdmin" Member="HuyAdmins">
-    <Type Name="HuyAdmin">
-      <Column Name="UserAdmin" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="PassAdmin" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Hoten" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.MaMANGA" Member="MaMANGAs">
-    <Type Name="MaMANGA">
-      <Column Name="MaTruyen" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="MaTL" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="THELOAI_MaMANGA" Member="THELOAI" ThisKey="MaTL" OtherKey="MaTL" Type="THELOAI" IsForeignKey="true" />
-      <Association Name="TRUYEN_MaMANGA" Member="TRUYEN" ThisKey="MaTruyen" OtherKey="MaTruyen" Type="TRUYEN" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.THELOAI" Member="THELOAIs">
-    <Type Name="THELOAI">
-      <Column Name="MaTL" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TenTL" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="THELOAI_MaMANGA" Member="MaMANGAs" ThisKey="MaTL" OtherKey="MaTL" Type="MaMANGA" />
-    </Type>
-  </Table>
-  <Table Name="dbo.TINHTRANG" Member="TINHTRANGs">
-    <Type Name="TINHTRANG">
-      <Column Name="MaTinhTrang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TenTinhTrang" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="TINHTRANG_TRUYEN" Member="TRUYENs" ThisKey="MaTinhTrang" OtherKey="MaTinhTrang" Type="TRUYEN" />
-    </Type>
-  </Table>
-  <Table Name="dbo.TRUYEN" Member="TRUYENs">
-    <Type Name="TRUYEN">
-      <Column Name="MaTruyen" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TenTruyen" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Mota" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="Anhbia" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="NgayCapNhat" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="MaTinhTrang" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="TRUYEN_MaMANGA" Member="MaMANGAs" ThisKey="MaTruyen" OtherKey="MaTruyen" Type="MaMANGA" />
-      <Association Name="TINHTRANG_TRUYEN" Member="TINHTRANG" ThisKey="MaTinhTrang" OtherKey="MaTinhTrang" Type="TINHTRANG" IsForeignKey="true" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ComicTruyen" Class="DataMangaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=LAPTOP-2S0CP2JK\SQLEXPRESS01;Initial Catalog=ComicTruyen;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="MangaStoreConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.[User]" Member="Users">
+    <Type Name="User">
+      <Column Name="MaUser" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Matkhau" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>
