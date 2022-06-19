@@ -2,11 +2,43 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataManga">
   <DataContextMoniker Name="/DataMangaDataContext" />
   <nestedChildShapes>
-    <classShape Id="0668141a-c274-4ce1-b2fe-5b952e283e4a" absoluteBounds="2.625, 0.5, 2, 1.3862939453125">
+    <classShape Id="0668141a-c274-4ce1-b2fe-5b952e283e4a" absoluteBounds="7.25, 3.625, 2, 1.3862939453125">
       <DataClassMoniker Name="/DataMangaDataContext/User" />
       <nestedChildShapes>
-        <elementListCompartment Id="d8e0d61c-b89d-4aad-8ddb-7a49df59c8d0" absoluteBounds="2.6399999999999997, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="d8e0d61c-b89d-4aad-8ddb-7a49df59c8d0" absoluteBounds="7.265, 4.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="51df38d4-dbdc-47bc-8487-0808a9b38f58" absoluteBounds="3.5, 2.875, 2, 1.3862939453124996">
+      <DataClassMoniker Name="/DataMangaDataContext/MaComic" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6cff26e8-50b6-45bb-a0c0-e2fc239057dd" absoluteBounds="3.515, 3.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="af844c5a-de94-43a6-aeb4-8f134092f4f1" absoluteBounds="0.75, 5.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DataMangaDataContext/TRUYEN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bb9ae567-dcc9-4f65-8819-0e157e8b2209" absoluteBounds="0.765, 6.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7146b745-4e4c-40e5-a512-20a3f9a20929" absoluteBounds="0.75, 3, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/DataMangaDataContext/THELOAI" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ee3f91a8-0f38-4423-bec6-183388c0c9e3" absoluteBounds="0.765, 3.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 6.53929768880208); (4.5 : 6.53929768880208); (4.5 : 4.2612939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataMangaDataContext/TRUYEN/TRUYEN_MaComic" />
+      <nodes>
+        <classShapeMoniker Id="af844c5a-de94-43a6-aeb4-8f134092f4f1" />
+        <classShapeMoniker Id="51df38d4-dbdc-47bc-8487-0808a9b38f58" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 3.59699625651042); (3.5 : 3.59699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataMangaDataContext/THELOAI/THELOAI_MaComic" />
+      <nodes>
+        <classShapeMoniker Id="7146b745-4e4c-40e5-a512-20a3f9a20929" />
+        <classShapeMoniker Id="51df38d4-dbdc-47bc-8487-0808a9b38f58" />
+      </nodes>
+    </associationConnector>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

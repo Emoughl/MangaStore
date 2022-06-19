@@ -4,7 +4,9 @@
     Layout = "~/Views/Shared/_LayoutManga.cshtml";
 }
 <div id="login" data-target-group="idForm">
-
+    <div class="Thongbao">
+    @ViewBag.Thongbao
+         </div>
     <header class="border-bottom px-4 px-md-6 py-4">
         <h2 class="font-size-3 mb-0 d-flex align-items-center"><i class="flaticon-user mr-3 font-size-5"></i>Tài Khoản</h2>
     </header>
@@ -63,5 +65,5 @@
 
             <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="true"></div>
         </div>
-            }
-        </div>
+    }
+</div>

@@ -122,6 +122,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AuthController.cs" />
+    <Compile Include="Controllers\BodyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -268,6 +269,13 @@
     <Content Include="assets\img\90x138\img5.jpg" />
     <Content Include="assets\img\90x138\img6.jpg" />
     <Content Include="assets\img\favicon.png" />
+    <Content Include="assets\img\ImagesHeader\truyen1.jpg" />
+    <Content Include="assets\img\ImagesHeader\truyen2.jpg" />
+    <Content Include="assets\img\ImagesHeader\truyen3.jpg" />
+    <Content Include="assets\img\ImagesHeader\truyen4.jpg" />
+    <Content Include="assets\img\ImagesHeader\truyen5.png" />
+    <Content Include="assets\img\ImagesHeader\truyen6.png" />
+    <Content Include="assets\img\ImagesHeader\truyen7.jpg" />
     <Content Include="assets\js\components\hs.header.js" />
     <Content Include="assets\js\components\hs.malihu-scrollbar.js" />
     <Content Include="assets\js\components\hs.selectpicker.js" />
@@ -367,6 +375,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Body\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

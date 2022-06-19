@@ -43,20 +43,15 @@
         }
 
 
-        .loginbtn .fb-login-button {
-            display: inline-block;
+    .loginbtn .fb-login-button fb_iframe_widget {
+        display: inline-block;
+    }
+        .loginbtn .fb-login-button fb_iframe_widget .abcRioButton {
+            height: 36px !important;
+            width: 36px !important;
+            border-radius: 100%;
         }
-    .loginbtn .fb-login-button .abcRioButton {
-        height: 36px !important;
-        width: 36px !important;
-        border-radius: 100%;
-    }
-
-    .loginbtn .fb-login-button .abcRioButton .abcRioButtonContentWrapper {
-        height: 36px;
-        width: 36px;
-    }
-
-    .loginbtn .fb-login-button .abcRioButton .abcRioButtonContentWrapper .abcRioButtonContents {
-        display: none;
-    }
+.Thongbao {
+    color: red;
+    text-align: center;
+}
