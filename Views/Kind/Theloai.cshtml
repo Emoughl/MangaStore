@@ -1,0 +1,11 @@
+﻿@model  IEnumerable<MangaStore.Models.THELOAI>
+    <p class="widget-title mb-0 font-weight-medium font-size-3 " style="
+    line-height: 4;">Thể Loại</p>
+    <div class=" list-group" style="font-size: 17px;line-height: 2;">
+        @foreach (var item in Model)
+        {
+            <a href="@Url.Action("Truyentheotheloai", "Kind",new { id = item.MaTL})" class="list-item">
+                @item.TenTL
+            </a>
+        }
+    </div>

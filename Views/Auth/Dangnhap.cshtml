@@ -13,6 +13,7 @@
 
     @using (Html.BeginForm("Dangnhap", "Auth"))
     {
+        @Html.ValidationSummary(true)
         <div class="p-4 p-md-6">
 
             <div class="form-group mb-4">
@@ -62,8 +63,8 @@
         </div>
         <div class="loginbtn">
             <div class="g-signin2" data-onsuccess="onSignIn"></div>
+            <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-layout="rounded" data-auto-logout-link="true" data-use-continue-as="false"></div>
 
-            <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="true"></div>
         </div>
     }
 </div>

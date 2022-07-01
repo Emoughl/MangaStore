@@ -46,6 +46,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Linq" />
@@ -121,9 +127,13 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AboutUsController.cs" />
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\BodyController.cs" />
+    <Compile Include="Controllers\ContactUsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KindController.cs" />
+    <Compile Include="Controllers\ShopListController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -269,6 +279,28 @@
     <Content Include="assets\img\90x138\img5.jpg" />
     <Content Include="assets\img\90x138\img6.jpg" />
     <Content Include="assets\img\favicon.png" />
+    <Content Include="assets\img\ImagesBody\5dau.jpg" />
+    <Content Include="assets\img\ImagesBody\bienniensu.jpg" />
+    <Content Include="assets\img\ImagesBody\bougostaydog.jpg" />
+    <Content Include="assets\img\ImagesBody\changtrai.jpg" />
+    <Content Include="assets\img\ImagesBody\Hero Academia.jpg" />
+    <Content Include="assets\img\ImagesBody\iland.jpg" />
+    <Content Include="assets\img\ImagesBody\kirito.jpg" />
+    <Content Include="assets\img\ImagesBody\magic.jpg" />
+    <Content Include="assets\img\ImagesBody\nuthan.jpg" />
+    <Content Include="assets\img\ImagesBody\owari.jpg" />
+    <Content Include="assets\img\ImagesBody\paraside.jpg" />
+    <Content Include="assets\img\ImagesBody\quanruou.jpg" />
+    <Content Include="assets\img\ImagesBody\Relife.jpg" />
+    <Content Include="assets\img\ImagesBody\rezero.jpg" />
+    <Content Include="assets\img\ImagesBody\Rezero1.jpg" />
+    <Content Include="assets\img\ImagesBody\shibatatsuya.jpg" />
+    <Content Include="assets\img\ImagesBody\spyxfamily.jpg" />
+    <Content Include="assets\img\ImagesBody\thamtu.jpg" />
+    <Content Include="assets\img\ImagesBody\thang9.jpg" />
+    <Content Include="assets\img\ImagesBody\Thanhguomdietquy.jpg" />
+    <Content Include="assets\img\ImagesBody\thegioiotome.jpg" />
+    <Content Include="assets\img\ImagesBody\Trangnhat.jpg" />
     <Content Include="assets\img\ImagesHeader\truyen1.jpg" />
     <Content Include="assets\img\ImagesHeader\truyen2.jpg" />
     <Content Include="assets\img\ImagesHeader\truyen3.jpg" />
@@ -276,6 +308,9 @@
     <Content Include="assets\img\ImagesHeader\truyen5.png" />
     <Content Include="assets\img\ImagesHeader\truyen6.png" />
     <Content Include="assets\img\ImagesHeader\truyen7.jpg" />
+    <Content Include="assets\img\Kind\relife11.png" />
+    <Content Include="assets\img\Logo.png" />
+    <Content Include="assets\img\Logo1.png" />
     <Content Include="assets\js\components\hs.header.js" />
     <Content Include="assets\js\components\hs.malihu-scrollbar.js" />
     <Content Include="assets\js\components\hs.selectpicker.js" />
@@ -301,6 +336,7 @@
     <Content Include="assets\vendor\hs-megamenu\src\hs.megamenu.js" />
     <Content Include="assets\vendor\jquery-migrate\dist\jquery-migrate.min.js" />
     <Content Include="assets\vendor\jquery\dist\jquery.min.js" />
+    <Content Include="assets\Logo2.ico" />
     <Content Include="assets\vendor\malihu-custom-scrollbar-plugin\jquery.mCustomScrollbar.concat.min.js" />
     <Content Include="assets\vendor\malihu-custom-scrollbar-plugin\jquery.mCustomScrollbar.css" />
     <Content Include="assets\vendor\malihu-custom-scrollbar-plugin\mCSB_buttons.png" />
@@ -313,11 +349,11 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="images\Logo.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="assets\vendor\flaticon\font\Flaticon.eot" />
@@ -372,10 +408,24 @@
     <Content Include="Views\Auth\Dangky.cshtml" />
     <Content Include="Views\Auth\Dangnhap.cshtml" />
     <Content Include="Views\Auth\Quenmatkhau.cshtml" />
+    <Content Include="Views\Body\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutKind.cshtml" />
+    <Content Include="Views\Kind\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutShopList.cshtml" />
+    <Content Include="Views\ShopList\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutAboutUs.cshtml" />
+    <Content Include="Views\AboutUs\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutContactUs.cshtml" />
+    <Content Include="Views\ContactUs\Index.cshtml" />
+    <Content Include="Views\Kind\Theloai.cshtml" />
+    <Content Include="Views\Kind\Nhaxuatban.cshtml" />
+    <Content Include="Views\Kind\Gia.cshtml" />
+    <Content Include="Views\Kind\Truyentheotheloai.cshtml" />
+    <Content Include="Views\Kind\TruyentheoNXB.cshtml" />
+    <Content Include="Views\Kind\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Body\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -1,43 +1,160 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataManga">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 16.25" name="DataManga">
   <DataContextMoniker Name="/DataMangaDataContext" />
   <nestedChildShapes>
-    <classShape Id="0668141a-c274-4ce1-b2fe-5b952e283e4a" absoluteBounds="7.25, 3.625, 2, 1.3862939453125">
-      <DataClassMoniker Name="/DataMangaDataContext/User" />
+    <classShape Id="ea0424b0-9337-4cab-b6dc-1611bfc53425" absoluteBounds="3.5, 11.625, 2, 1.6801985950271288">
+      <DataClassMoniker Name="/DataMangaDataContext/CHITIETDONHANG" />
       <nestedChildShapes>
-        <elementListCompartment Id="d8e0d61c-b89d-4aad-8ddb-7a49df59c8d0" absoluteBounds="7.265, 4.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="9f4ff415-d799-4052-9064-3d867879513e" absoluteBounds="3.515, 12.085, 1.9700000000000002, 1.1201985950271287" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="51df38d4-dbdc-47bc-8487-0808a9b38f58" absoluteBounds="3.5, 2.875, 2, 1.3862939453124996">
-      <DataClassMoniker Name="/DataMangaDataContext/MaComic" />
+    <classShape Id="02802f4a-0479-446e-8543-0775008780b4" absoluteBounds="3.5, 14.25, 2, 1.6801985950271288">
+      <DataClassMoniker Name="/DataMangaDataContext/VIETSACH" />
       <nestedChildShapes>
-        <elementListCompartment Id="6cff26e8-50b6-45bb-a0c0-e2fc239057dd" absoluteBounds="3.515, 3.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="4be3a7ba-e951-4f95-b141-750273fb49f9" absoluteBounds="3.515, 14.71, 1.9700000000000002, 1.1201985950271287" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="af844c5a-de94-43a6-aeb4-8f134092f4f1" absoluteBounds="0.75, 5.75, 2, 1.5785953776041666">
-      <DataClassMoniker Name="/DataMangaDataContext/TRUYEN" />
+    <classShape Id="ed14799a-1ab6-4ed0-a95b-d940fb752d8a" absoluteBounds="3.5, 6.75, 2, 1.2586491059263558">
+      <DataClassMoniker Name="/DataMangaDataContext/Confirm" />
       <nestedChildShapes>
-        <elementListCompartment Id="bb9ae567-dcc9-4f65-8819-0e157e8b2209" absoluteBounds="0.765, 6.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="4f91e982-a7dd-46a5-ac88-b64984bf1c3c" absoluteBounds="3.515, 7.21, 1.9700000000000002, 0.69864910592635465" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="7146b745-4e4c-40e5-a512-20a3f9a20929" absoluteBounds="0.75, 3, 2, 1.1939925130208335">
+    <classShape Id="798de716-d920-468a-8f56-bee773f3ce29" absoluteBounds="6.25, 10.5, 2, 2.1017480841279017">
+      <DataClassMoniker Name="/DataMangaDataContext/DONDATHANG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="71507899-5c4c-49ac-bea6-7b42e2d4c490" absoluteBounds="6.265, 10.96, 1.9700000000000002, 1.541748084127903" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2ad2d0db-0ef8-4793-b3fa-4a524145336c" absoluteBounds="6.75, 1.125, 2, 1.2586491059263549">
+      <DataClassMoniker Name="/DataMangaDataContext/GIá" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c8bbe60a-1107-4dbc-8140-d5c050b184aa" absoluteBounds="6.765, 1.585, 1.9700000000000002, 0.69864910592635465" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d5ed2a2f-abc8-42fe-9b45-b1fd7543051c" absoluteBounds="3.5, 3.625, 2, 1.4694238504767418">
+      <DataClassMoniker Name="/DataMangaDataContext/MACOMIC" />
+      <nestedChildShapes>
+        <elementListCompartment Id="72c1be7c-c6b5-4a4e-bafb-c2455e9674aa" absoluteBounds="3.515, 4.085, 1.9700000000000002, 0.90942385047674179" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5ff56ddd-b725-4130-ac73-a01b6bba98ac" absoluteBounds="6.5, 6.625, 2, 1.4694238504767423">
+      <DataClassMoniker Name="/DataMangaDataContext/MAQUANHE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7ccbb961-93da-489b-9a5e-55f41daf5276" absoluteBounds="6.515, 7.085, 1.9700000000000002, 0.90942385047674179" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a33addfc-bea6-42af-ae60-7b342e522f25" absoluteBounds="3.75, 0.75, 2, 1.2586491059263549">
+      <DataClassMoniker Name="/DataMangaDataContext/NHAXUATBAN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4aff4ef7-fb9d-46ca-9748-3bb92d52efa7" absoluteBounds="3.765, 1.21, 1.9700000000000002, 0.69864910592635465" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0ac0b2df-ba4b-41b0-8ffd-607263075c7f" absoluteBounds="6.25, 14.125, 2, 1.890973339577517">
+      <DataClassMoniker Name="/DataMangaDataContext/TACGIA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f0c67125-83d0-4e5a-98b3-c1fff52ac92d" absoluteBounds="6.265, 14.585, 1.9700000000000002, 1.3309733395775159" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9c376a08-d181-4bf9-a0a8-a59b1df78ce2" absoluteBounds="0.75, 3.75, 2, 1.2586491059263558">
       <DataClassMoniker Name="/DataMangaDataContext/THELOAI" />
       <nestedChildShapes>
-        <elementListCompartment Id="ee3f91a8-0f38-4423-bec6-183388c0c9e3" absoluteBounds="0.765, 3.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="d8af431e-4f0a-4746-9b51-9e2eb5ed67df" absoluteBounds="0.765, 4.21, 1.9700000000000002, 0.69864910592635465" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.75 : 6.53929768880208); (4.5 : 6.53929768880208); (4.5 : 4.2612939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/DataMangaDataContext/TRUYEN/TRUYEN_MaComic" />
+    <classShape Id="6c390c2a-4878-42cc-a197-f9f1f9ff3327" absoluteBounds="0.75, 9.75, 2, 1.2586491059263558">
+      <DataClassMoniker Name="/DataMangaDataContext/TinhTrang" />
+      <nestedChildShapes>
+        <elementListCompartment Id="270f1f0d-1e44-4fff-ad72-eab93690b37a" absoluteBounds="0.765, 10.21, 1.9700000000000002, 0.69864910592635465" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8a13eecc-d6cc-4c81-9d0e-216ce494c3a4" absoluteBounds="0.75, 6.25, 2, 2.31252282867829">
+      <DataClassMoniker Name="/DataMangaDataContext/TRUYEN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fabd99fe-d3d8-4a22-aae1-730b405a83b2" absoluteBounds="0.765, 6.71, 1.9700000000000002, 1.75252282867829" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8d84b444-17fa-41bf-8277-65e8c7362880" absoluteBounds="3.5, 8.75, 2, 1.4694238504767405">
+      <DataClassMoniker Name="/DataMangaDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dbcd8c63-1d92-4c63-9d8a-6b83704b7c47" absoluteBounds="3.515, 9.21, 1.9700000000000002, 0.90942385047674179" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 12.113374042064); (6.25 : 12.113374042064)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataMangaDataContext/CHITIETDONHANG/CHITIETDONHANG_DONDATHANG" />
       <nodes>
-        <classShapeMoniker Id="af844c5a-de94-43a6-aeb4-8f134092f4f1" />
-        <classShapeMoniker Id="51df38d4-dbdc-47bc-8487-0808a9b38f58" />
+        <classShapeMoniker Id="ea0424b0-9337-4cab-b6dc-1611bfc53425" />
+        <classShapeMoniker Id="798de716-d920-468a-8f56-bee773f3ce29" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 3.59699625651042); (3.5 : 3.59699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/DataMangaDataContext/THELOAI/THELOAI_MaComic" />
+    <associationConnector edgePoints="[(5.65625 : 2.00864910592635); (5.65625 : 6.65625); (6.5 : 6.65625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataMangaDataContext/NHAXUATBAN/NHAXUATBAN_MAQUANHE" />
       <nodes>
-        <classShapeMoniker Id="7146b745-4e4c-40e5-a512-20a3f9a20929" />
-        <classShapeMoniker Id="51df38d4-dbdc-47bc-8487-0808a9b38f58" />
+        <classShapeMoniker Id="a33addfc-bea6-42af-ae60-7b342e522f25" />
+        <classShapeMoniker Id="5ff56ddd-b725-4130-ac73-a01b6bba98ac" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 15.0900992975136); (6.25 : 15.0900992975136)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataMangaDataContext/VIETSACH/VIETSACH_TACGIA" />
+      <nodes>
+        <classShapeMoniker Id="02802f4a-0479-446e-8543-0775008780b4" />
+        <classShapeMoniker Id="0ac0b2df-ba4b-41b0-8ffd-607263075c7f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.37932455296318); (3.10416666666667 : 4.37932455296318 : JumpStart); (3.27083333333333 : 4.37932455296318 : JumpEnd); (3.5 : 4.37932455296318)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataMangaDataContext/THELOAI/THELOAI_MACOMIC" />
+      <nodes>
+        <classShapeMoniker Id="9c376a08-d181-4bf9-a0a8-a59b1df78ce2" />
+        <classShapeMoniker Id="d5ed2a2f-abc8-42fe-9b45-b1fd7543051c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 9.75); (3.125 : 9.375); (3.125 : 7.37932455296318); (3.5 : 7.37932455296318)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataMangaDataContext/TinhTrang/TinhTrang_Confirm" />
+      <nodes>
+        <classShapeMoniker Id="6c390c2a-4878-42cc-a197-f9f1f9ff3327" />
+        <classShapeMoniker Id="ed14799a-1ab6-4ed0-a95b-d940fb752d8a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 8.52867567483214); (3.06607443490112 : 8.84475010973326 : JumpStart); (3.18392556509888 : 8.96260123993101 : JumpEnd); (3.375 : 9.15367567483214); (3.375 : 12.4650992975136); (3.5 : 12.4650992975136)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataMangaDataContext/TRUYEN/TRUYEN_CHITIETDONHANG" />
+      <nodes>
+        <classShapeMoniker Id="8a13eecc-d6cc-4c81-9d0e-216ce494c3a4" />
+        <classShapeMoniker Id="ea0424b0-9337-4cab-b6dc-1611bfc53425" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 8.53329105944752); (3.06607443490112 : 8.84936549434864 : JumpStart); (3.18392556509888 : 8.9672166245464 : JumpEnd); (3.3125 : 9.09579105944752); (3.3125 : 15.0900992975136); (3.5 : 15.0900992975136)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataMangaDataContext/TRUYEN/TRUYEN_VIETSACH" />
+      <nodes>
+        <classShapeMoniker Id="8a13eecc-d6cc-4c81-9d0e-216ce494c3a4" />
+        <classShapeMoniker Id="02802f4a-0479-446e-8543-0775008780b4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 7.00216227648159); (3.5 : 7.00216227648159)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataMangaDataContext/TRUYEN/TRUYEN_Confirm" />
+      <nodes>
+        <classShapeMoniker Id="8a13eecc-d6cc-4c81-9d0e-216ce494c3a4" />
+        <classShapeMoniker Id="ed14799a-1ab6-4ed0-a95b-d940fb752d8a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 6.28076823076923); (3.1875 : 5.84326823076923); (3.1875 : 3.97091027648159); (3.5 : 3.97091027648159)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataMangaDataContext/TRUYEN/TRUYEN_MACOMIC" />
+      <nodes>
+        <classShapeMoniker Id="8a13eecc-d6cc-4c81-9d0e-216ce494c3a4" />
+        <classShapeMoniker Id="d5ed2a2f-abc8-42fe-9b45-b1fd7543051c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 6.28538361538462); (3 : 6.03538361538462); (3 : 6.25); (5.57291666666667 : 6.25 : JumpStart); (5.73958333333333 : 6.25 : JumpEnd); (6.125 : 6.25); (6.5 : 6.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/DataMangaDataContext/TRUYEN/TRUYEN_MAQUANHE" />
+      <nodes>
+        <classShapeMoniker Id="8a13eecc-d6cc-4c81-9d0e-216ce494c3a4" />
+        <classShapeMoniker Id="5ff56ddd-b725-4130-ac73-a01b6bba98ac" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 9.48471192523837); (7.25 : 9.48471192523837); (7.25 : 10.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataMangaDataContext/User/User_DONDATHANG" />
+      <nodes>
+        <classShapeMoniker Id="8d84b444-17fa-41bf-8277-65e8c7362880" />
+        <classShapeMoniker Id="798de716-d920-468a-8f56-bee773f3ce29" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

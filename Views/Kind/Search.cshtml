@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_LayoutKind.cshtml";
+}
+
+<div class="tab-content" id="pills-tabContent">
+    <div class="tab-pane fade show active" id="pills-one-example1" role="tabpanel" aria-labelledby="pills-one-example1-tab">
+
+        <ul class="products list-unstyled row no-gutters row-cols-2 row-cols-lg-3 row-cols-wd-4 border-top border-left mb-6">
+            @foreach (var truyens in Model)
+            {
+                <li class="product col">
+                    <div class="product__inner overflow-hidden bg-white p-3 p-md-4d875">
+                        <div class="woocommerce-LoopProduct-link woocommerce-loop-product__link d-block position-relative">
+                            <div class="woocommerce-loop-product__thumbnail">
+                                <a href="@Url.Action("Details", "Kind", new { id = truyens.MaTruyen })" class="d-block"><img src="~/assets/img/ImagesBody/@truyens.Anhbia" class="img-fluid d-block mx-auto attachment-shop_catalog size-shop_catalog wp-post-image img-fluid" alt="image-description" title="@truyens.Mota"></a>
+                            </div>
+                            <div class="woocommerce-loop-product__body product__body pt-3 bg-white">
+                                <h2 class="woocommerce-loop-product__title product__title h6 text-lh-md mb-1 text-height-2 crop-text-2 h-dark"><span>@truyens.TenTruyen</span> </h2>
+                                <div class="price d-flex align-items-center font-weight-medium font-size-3">
+                                    <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>@truyens.Giaban</span>
+                                </div>
+                            </div>
+                            <div class="product__hover d-flex align-items-center">
+                                <a href="#" class="text-uppercase text-dark h-dark font-weight-medium mr-auto" data-toggle="tooltip" data-placement="right" title="Thêm Vào Giỏ Hàng">
+                                    <span class="product__add-to-cart">Thêm Vào Giỏ Hàng</span>
+                                    <span class="product__add-to-cart-icon font-size-4"><i class="flaticon-icon-126515"></i></span>
+                                </a>
+                                <a href="#" class="h-p-bg btn btn-outline-primary border-0">
+                                    <i class="flaticon-heart"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            }
+        </ul>
+    </div>
+</div>
+

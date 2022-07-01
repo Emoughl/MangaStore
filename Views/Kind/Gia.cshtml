@@ -1,0 +1,11 @@
+﻿@model  IEnumerable<MangaStore.Models.GIá>
+<p class="widget-title mb-0 font-weight-medium font-size-3 " style="
+    line-height: 4;">Giá</p>
+<div class=" list-group" style="font-size: 17px;line-height: 2;">
+    @foreach (var item in Model)
+    {
+    <a href="@Url.Action("SPTheoGiá", "Kind",new { id = item.MaGia }) class="list-group">
+        <input type=checkbox /> @item.GiaTri
+    </a>
+    }
+</div>

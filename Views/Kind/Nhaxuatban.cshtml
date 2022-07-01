@@ -1,0 +1,12 @@
+﻿@model  IEnumerable<MangaStore.Models.NHAXUATBAN>
+<p class="widget-title mb-0 font-weight-medium font-size-3 " style="
+    line-height: 4;" ;">Nhà Xuất Bản</p>
+<div class=" list-group"style="font-size: 17px;line-height: 2;">
+    @foreach (var item in Model)
+    {
+        <a href="@Url.Action("TruyentheoNXB", "Kind",new { id = item.MaNXB})" class="list-item">
+            @item.TenNXB
+        </a>
+    }
+</div>
+

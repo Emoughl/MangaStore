@@ -1,35 +1,122 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ComicTruyen" Class="DataMangaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="WebSettings" ConnectionString="Data Source=LAPTOP-2S0CP2JK\SQLEXPRESS01;Initial Catalog=ComicTruyen;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="MangaStoreConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.[User]" Member="Users">
-    <Type Name="User">
-      <Column Name="MaUser" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Matkhau" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.MaComic" Member="MaComics">
-    <Type Name="MaComic">
-      <Column Name="MC" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="MaTL" Type="System.Int32" DbType="Int" CanBeNull="true" />
+  <Table Name="dbo.CHITIETDONHANG" Member="CHITIETDONHANGs">
+    <Type Name="CHITIETDONHANG">
+      <Column Name="MaDonHang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="MaTruyen" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="TRUYEN_MaComic" Member="TRUYEN" ThisKey="MaTruyen" OtherKey="MaTruyen" Type="TRUYEN" IsForeignKey="true" />
-      <Association Name="THELOAI_MaComic" Member="THELOAI" ThisKey="MaTL" OtherKey="MaTL" Type="THELOAI" IsForeignKey="true" />
+      <Column Name="SoLuong" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Dongia" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="CHITIETDONHANG_DONDATHANG" Member="DONDATHANG" ThisKey="MaDonHang" OtherKey="MaDonHang" Type="DONDATHANG" Cardinality="One" />
+      <Association Name="TRUYEN_CHITIETDONHANG" Member="TRUYEN" ThisKey="MaTruyen" OtherKey="MaTruyen" Type="TRUYEN" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.TRUYEN" Member="TRUYENs">
-    <Type Name="TRUYEN">
-      <Column Name="MaTruyen" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TenTruyen" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Mota" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="Anhbia" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="TRUYEN_MaComic" Member="MaComics" ThisKey="MaTruyen" OtherKey="MaTruyen" Type="MaComic" />
+  <Table Name="dbo.VIETSACH" Member="VIETSACHes">
+    <Type Name="VIETSACH">
+      <Column Name="MaTG" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaTruyen" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VaiTro" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Vitri" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="VIETSACH_TACGIA" Member="TACGIA" ThisKey="MaTG" OtherKey="MaTG" Type="TACGIA" Cardinality="One" />
+      <Association Name="TRUYEN_VIETSACH" Member="TRUYEN" ThisKey="MaTruyen" OtherKey="MaTruyen" Type="TRUYEN" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Confirm]" Member="Confirms">
+    <Type Name="Confirm">
+      <Column Name="MaTruyen" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idconfirm" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="TinhTrang_Confirm" Member="TinhTrang" ThisKey="idconfirm" OtherKey="idcofirm" Type="TinhTrang" IsForeignKey="true" />
+      <Association Name="TRUYEN_Confirm" Member="TRUYEN" ThisKey="MaTruyen" OtherKey="MaTruyen" Type="TRUYEN" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DONDATHANG" Member="DONDATHANGs">
+    <Type Name="DONDATHANG">
+      <Column Name="MaDonHang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Dathanhtoan" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Tinhtranggiaohang" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Ngaydat" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Ngaygiao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MaUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="CHITIETDONHANG_DONDATHANG" Member="CHITIETDONHANG" ThisKey="MaDonHang" OtherKey="MaDonHang" Type="CHITIETDONHANG" IsForeignKey="true" />
+      <Association Name="User_DONDATHANG" Member="User" ThisKey="MaUser" OtherKey="MaUser" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GIá" Member="GIás">
+    <Type Name="GIá">
+      <Column Name="MaGia" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GiaTri" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MACOMIC" Member="MACOMICs">
+    <Type Name="MACOMIC">
+      <Column Name="MC" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaTL" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MaTruyen" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="THELOAI_MACOMIC" Member="THELOAI" ThisKey="MaTL" OtherKey="MaTL" Type="THELOAI" IsForeignKey="true" />
+      <Association Name="TRUYEN_MACOMIC" Member="TRUYEN" ThisKey="MaTruyen" OtherKey="MaTruyen" Type="TRUYEN" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAQUANHE" Member="MAQUANHEs">
+    <Type Name="MAQUANHE">
+      <Column Name="MaQH" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaNXB" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaTruyen" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="NHAXUATBAN_MAQUANHE" Member="NHAXUATBAN" ThisKey="MaNXB" OtherKey="MaNXB" Type="NHAXUATBAN" IsForeignKey="true" />
+      <Association Name="TRUYEN_MAQUANHE" Member="TRUYEN" ThisKey="MaTruyen" OtherKey="MaTruyen" Type="TRUYEN" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NHAXUATBAN" Member="NHAXUATBANs">
+    <Type Name="NHAXUATBAN">
+      <Column Name="MaNXB" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenNXB" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="NHAXUATBAN_MAQUANHE" Member="MAQUANHEs" ThisKey="MaNXB" OtherKey="MaNXB" Type="MAQUANHE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TACGIA" Member="TACGIAs">
+    <Type Name="TACGIA">
+      <Column Name="MaTG" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenTG" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Diachi" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Tieusu" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="DienThoai" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="VIETSACH_TACGIA" Member="VIETSACH" ThisKey="MaTG" OtherKey="MaTG" Type="VIETSACH" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.THELOAI" Member="THELOAIs">
     <Type Name="THELOAI">
       <Column Name="MaTL" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="TenTL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="THELOAI_MaComic" Member="MaComics" ThisKey="MaTL" OtherKey="MaTL" Type="MaComic" />
+      <Association Name="THELOAI_MACOMIC" Member="MACOMICs" ThisKey="MaTL" OtherKey="MaTL" Type="MACOMIC" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TinhTrang" Member="TinhTrangs">
+    <Type Name="TinhTrang">
+      <Column Name="idcofirm" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TinhTrang" Member="TinhTrang1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="TinhTrang_Confirm" Member="Confirm" ThisKey="idcofirm" OtherKey="idconfirm" Type="Confirm" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TRUYEN" Member="TRUYENs">
+    <Type Name="TRUYEN">
+      <Column Name="MaTruyen" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenTruyen" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Mota" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Anhbia" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Ngaycapnhat" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Giaban" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Soluongton" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="TRUYEN_CHITIETDONHANG" Member="CHITIETDONHANGs" ThisKey="MaTruyen" OtherKey="MaTruyen" Type="CHITIETDONHANG" />
+      <Association Name="TRUYEN_VIETSACH" Member="VIETSACHes" ThisKey="MaTruyen" OtherKey="MaTruyen" Type="VIETSACH" />
+      <Association Name="TRUYEN_Confirm" Member="Confirms" ThisKey="MaTruyen" OtherKey="MaTruyen" Type="Confirm" />
+      <Association Name="TRUYEN_MACOMIC" Member="MACOMICs" ThisKey="MaTruyen" OtherKey="MaTruyen" Type="MACOMIC" />
+      <Association Name="TRUYEN_MAQUANHE" Member="MAQUANHEs" ThisKey="MaTruyen" OtherKey="MaTruyen" Type="MAQUANHE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[User]" Member="Users">
+    <Type Name="User">
+      <Column Name="MaUser" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Matkhau" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="User_DONDATHANG" Member="DONDATHANGs" ThisKey="MaUser" OtherKey="MaUser" Type="DONDATHANG" />
     </Type>
   </Table>
 </Database>

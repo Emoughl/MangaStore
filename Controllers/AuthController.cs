@@ -25,26 +25,30 @@ namespace MangaStore.Controllers
         [HttpPost]
         public ActionResult Dangnhap(FormCollection hz)
         {
-            var email = hz["Email"];
-            var matkhau = hz["Matkhau"];
+                var email = hz["Email"];
+                var matkhau = hz["Matkhau"];
             if (String.IsNullOrEmpty(email))
+            {
                 ViewData["Loi1"] = "Vui lòng nhập tên đăng nhập";
+            }
             else if (String.IsNullOrEmpty(matkhau))
+            {
                 ViewData["Loi2"] = "Vui lòng nhập mật khẩu";
+            }
             else
             {
-                var us = db.Users.SingleOrDefault(n => n.Email == email && n.Matkhau == matkhau);
+                User us = db.Users.SingleOrDefault(n => n.Email== email && n.Matkhau == matkhau);
                 if (us != null)
                 {
-                    Session["Taikhoan"] = us;
+                    Session["DangNhapThongBao"] = "Đã Đăng Nhập Thành Công";
                     return RedirectToAction("Index", "Auth");
                 }
                 else
                     ViewBag.Thongbao = "Tên đăng nhập hoặc mật khẩu không hợp lệ";
             }
 
-            return View();
-        }
+                return this.Dangnhap();
+            }
         [HttpGet]
         public ActionResult Dangky()
         {
