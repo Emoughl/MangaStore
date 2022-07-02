@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
+using PagedList.Mvc;
 
 namespace MangaStore.Controllers
 {
@@ -15,23 +17,27 @@ namespace MangaStore.Controllers
         {
             return data.TRUYENs.OrderByDescending(a => a.Ngaycapnhat).Take(count).ToList();
         }
-        public ActionResult Index()
+        public ActionResult Index(int ? page)
         {
-            var truyenmoi = Laytruyenmoi(12);
-            return View(truyenmoi);
+            int pageSize = 8;
+            int pageNum = (page ?? 1);
+            var truyenmoi = Laytruyenmoi(20);
+            return View(truyenmoi.ToPagedList(pageNum,pageSize));
         }
         public ActionResult Theloai()
         {
             var theloai = from tl in data.THELOAIs select tl;
             return PartialView(theloai);
         }
-        public ActionResult Truyentheotheloai(int id)
+        public ActionResult Truyentheotheloai(int id,int ? page)
         {
+            int pageSize = 8;
+            int pageNum = (page ?? 1);
             var truyen = from t in data.TRUYENs
                          join tl in data.MACOMICs on t.MaTruyen equals tl.MaTruyen
                          where tl.MaTL == id
                          select t;
-            return View(truyen);
+            return View(truyen.ToPagedList(pageNum, pageSize));
 
         }
         public ActionResult Nhaxuatban()
