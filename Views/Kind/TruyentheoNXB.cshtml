@@ -1,4 +1,6 @@
-﻿
+﻿@using MangaStore.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<TRUYEN>
 @{
     ViewBag.Title = "TruyentheoNXB";
     Layout = "~/Views/Shared/_LayoutKind.cshtml";
@@ -13,7 +15,7 @@
                     <div class="product__inner overflow-hidden bg-white p-3 p-md-4d875">
                         <div class="woocommerce-LoopProduct-link woocommerce-loop-product__link d-block position-relative">
                             <div class="woocommerce-loop-product__thumbnail">
-                                <a href="@Url.Action("Details", "Kind", new { id = truyens.MaTruyen })" class="d-block"><img src="~/assets/img/ImagesBody/@truyens.Anhbia" class="img-fluid d-block mx-auto attachment-shop_catalog size-shop_catalog wp-post-image img-fluid" alt="image-description" title="@truyens.Mota"></a>
+                                <a href="@Url.Action("Chitiettruyen", "Kind", new { id = truyens.MaTruyen })" class="d-block"><img src="~/assets/img/ImagesBody/@truyens.Anhbia" class="img-fluid d-block mx-auto attachment-shop_catalog size-shop_catalog wp-post-image img-fluid" alt="image-description" title="@truyens.Mota"></a>
                             </div>
                             <div class="woocommerce-loop-product__body product__body pt-3 bg-white">
                                 <h2 class="woocommerce-loop-product__title product__title h6 text-lh-md mb-1 text-height-2 crop-text-2 h-dark"><span>@truyens.TenTruyen</span> </h2>
@@ -22,8 +24,8 @@
                                 </div>
                             </div>
                             <div class="product__hover d-flex align-items-center">
-                                <a href="#" class="text-uppercase text-dark h-dark font-weight-medium mr-auto" data-toggle="tooltip" data-placement="right" title="ADD TO CART">
-                                    <span class="product__add-to-cart">ADD TO CART</span>
+                                <a href="#" class="text-uppercase text-dark h-dark font-weight-medium mr-auto" data-toggle="tooltip" data-placement="right" title="MUA NGAY">
+                                    <span class="product__add-to-cart">MUA NGAY</span>
                                     <span class="product__add-to-cart-icon font-size-4"><i class="flaticon-icon-126515"></i></span>
                                 </a>
                                 <a href="#" class="h-p-bg btn btn-outline-primary border-0">
@@ -35,17 +37,27 @@
                 </li>
             }
         </ul>
-        <nav aria-label="Page navigation example">
-            <ul class="pagination pagination__custom justify-content-md-center flex-nowrap flex-md-wrap overflow-auto overflow-md-visble">
-                <li class="flex-shrink-0 flex-md-shrink-1 page-item"><a class="page-link" href="#">Trước</a></li>
-                <li class="flex-shrink-0 flex-md-shrink-1 page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
-                <li class="flex-shrink-0 flex-md-shrink-1 page-item"><a class="page-link" href="#">2</a></li>
-                <li class="flex-shrink-0 flex-md-shrink-1 page-item"><a class="page-link" href="#">3</a></li>
-                <li class="flex-shrink-0 flex-md-shrink-1 page-item"><a class="page-link" href="#">4</a></li>
-                <li class="flex-shrink-0 flex-md-shrink-1 page-item"><a class="page-link" href="#">5</a></li>
-                <li class="flex-shrink-0 flex-md-shrink-1 page-item"><a class="page-link" href="#">Sau</a></li>
-            </ul>
-        </nav>
+        Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber)/@Model.PageCount
+        <ul class="pagination pagination__custom justify-content-md-center flex-nowrap flex-md-wrap overflow-auto overflow-md-visble">
+            <li class="MenuTrang">
+                @Html.PagedListPager(Model, page => Url.Action("TruyentheoNXB", new { page = page }))
+            </li>
+        </ul>
+        <style>
+            .MenuTrang li {
+                display: inline;
+            }
+
+            .pagination > li > a, .pagination > li > span {
+                padding: 6px 24px;
+                border: 1px solid #ddd;
+                background-color: #ffffff;
+                text-decoration: none;
+                float: right;
+                font-size: 25px;
+            }
+            
+        </style>
     </div>
 </div>
 

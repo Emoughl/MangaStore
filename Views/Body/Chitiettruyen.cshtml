@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewBag.Title = "Chitiettruyen";
+    Layout = "~/Views/Shared/_LayoutShop.cshtml";
+}
+<div class="page-header border-bottom">
+    <div class="container">
+        <div class="d-md-flex justify-content-between align-items-center py-4">
+            <h1 class="page-title font-size-3 font-weight-medium m-0 text-lh-lg">Thông Tin Truyện</h1>
+            <nav class="woocommerce-breadcrumb font-size-2">
+                <a href="/Body/Index" class="h-primary">Trang Chủ</a>
+                <span class="breadcrumb-separator mx-1"><i class="fas fa-angle-right"></i></span>Chi Tiết Truyện
+            </nav>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 woocommerce-product-gallery woocommerce-product-gallery--with-images images">
+            <figure class="woocommerce-product-gallery__wrapper pt-8 mb-0">
+                <div class="js-slick-carousel u-slick" data-pagi-classes="text-center u-slick__pagination my-4">
+                    <div class="js-slide">
+                        <img src="~/assets/img/ImagesBody/@Model.Anhbia" width="75%" alt="Image Description" class="mx-auto img-fluid">
+                    </div>
+                </div>
+            </figure>
+        </div>
+        <div class="col-md-7 pl-0 summary entry-summary border-left">
+            <div class="space-top-2 px-4 px-xl-7 border-bottom pb-5">
+                <h1 class="product_title entry-title font-size-7 mb-3">@Model.TenTruyen</h1>
+                <p class="price font-size-22 font-weight-medium mb-3">
+                    <span class="woocommerce-Price-amount amount">
+                        <span class="woocommerce-Price-currencySymbol">$</span>@Model.Giaban
+                    </span>
+                </p>
+            </div>
+            <div class="woocommerce-product-details__short-description font-size-2 mb-5">
+                <p class="mota" style="padding: 20px;">@Model.Mota</p>
+            </div>
+            <div>
+                <form class="cart d-md-flex align-items-center" method="post" enctype="multipart/form-data">
+                    <li class="mr-6 mb-4 mb-md-0">
+                        <a href="#" class="h-primary"><i class="flaticon-heart mr-2"></i>Thêm Vào Yêu Thích</a>
+                    </li>
+                    <div id="Datmua">
+                        <a href="@Url.Action("Themgiohang", "Giohang", new { id = Model.MaTruyen, strURL = Request.Url.ToString() })" class="list-group-item">
+                            ĐẶT MUA
+                        </a>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+<style>
+    #Datmua a {
+        clear: both;
+        background-color: black;
+        color: white;
+        width: 200px;
+        height: 50x;
+        display: block;
+        float: right;
+        text-align: center;
+        padding-top: 10px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+        #Datmua a:hover {
+            background-color: red;
+            color: white;
+        }
+</style>
+
+
+

@@ -1,6 +1,8 @@
-﻿
+﻿@using MangaStore.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<TRUYEN>
 @{
-    ViewBag.Title = "Search";
+    ViewBag.Title = "TruyentheoGiaTri";
     Layout = "~/Views/Shared/_LayoutKind.cshtml";
 }
 
@@ -23,8 +25,8 @@
                                 </div>
                             </div>
                             <div class="product__hover d-flex align-items-center">
-                                <a href="#" class="text-uppercase text-dark h-dark font-weight-medium mr-auto" data-toggle="tooltip" data-placement="right" title="Mua Ngay">
-                                    <span class="product__add-to-cart">Mua Ngay</span>
+                                <a href="#" class="text-uppercase text-dark h-dark font-weight-medium mr-auto" data-toggle="tooltip" data-placement="right" title="MUA NGAY">
+                                    <span class="product__add-to-cart">MUA NGAY</span>
                                     <span class="product__add-to-cart-icon font-size-4"><i class="flaticon-icon-126515"></i></span>
                                 </a>
                                 <a href="#" class="h-p-bg btn btn-outline-primary border-0">
@@ -36,6 +38,27 @@
                 </li>
             }
         </ul>
+        Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber)/@Model.PageCount
+        <ul class="pagination pagination__custom justify-content-md-center flex-nowrap flex-md-wrap overflow-auto overflow-md-visble">
+            <div class="MenuTrang">
+                @Html.PagedListPager(Model, page => Url.Action("TruyentheoGiaTri", new { page = page }))
+            </div>
+        </ul>
+        <style>
+            .MenuTrang li {
+                display: inline;
+            }
+
+            .pagination > li > a, .pagination > li > span {
+                padding: 6px 24px;
+                border: 1px solid #ddd;
+                background-color: #ffffff;
+                text-decoration: none;
+                float: right;
+                font-size: 25px;
+            }
+            }
+        </style>
     </div>
 </div>
 

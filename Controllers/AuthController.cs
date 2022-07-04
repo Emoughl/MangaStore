@@ -19,14 +19,13 @@ namespace MangaStore.Controllers
         [HttpGet]
         public ActionResult Dangnhap()
         {
-            ViewBag.Thongbao = Session["DangNhapThongBao"];
             return View();
         }
         [HttpPost]
-        public ActionResult Dangnhap(FormCollection hz)
+        public ActionResult Dangnhap(FormCollection collection)
         {
-                var email = hz["Email"];
-                var matkhau = hz["Matkhau"];
+                var email = collection["email"];
+                var matkhau = collection["password"];
             if (String.IsNullOrEmpty(email))
             {
                 ViewData["Loi1"] = "Vui lòng nhập tên đăng nhập";
@@ -40,14 +39,15 @@ namespace MangaStore.Controllers
                 User us = db.Users.SingleOrDefault(n => n.Email== email && n.Matkhau == matkhau);
                 if (us != null)
                 {
-                    Session["DangNhapThongBao"] = "Đã Đăng Nhập Thành Công";
+                    ViewBag.Thongbao = "Bạn đã đăng nhập thành công";
+                    Session["Email"] = us;
                     return RedirectToAction("Index", "Auth");
                 }
-                else
+                else 
                     ViewBag.Thongbao = "Tên đăng nhập hoặc mật khẩu không hợp lệ";
             }
 
-                return this.Dangnhap();
+                return View();
             }
         [HttpGet]
         public ActionResult Dangky()
@@ -59,14 +59,19 @@ namespace MangaStore.Controllers
         {
             var email= collection["email"];
             var matkhau = collection["password"];
+            var matkhaunhaplai = collection["Confirmpassword"];
             if (String.IsNullOrEmpty(email))
             {
                 ViewData["Loi1"] = "Phải nhập tên đăng nhập";
 
             }
-            else if (String.IsNullOrEmpty(matkhau))
+            if (String.IsNullOrEmpty(matkhau))
             {
                 ViewData["Loi2"] = "Phải nhập mật khẩu";
+            }
+            if (String.IsNullOrEmpty(matkhaunhaplai))
+            {
+                ViewData["Loi3"] = "Nhập lại mật khẩu";
             }
             else
             {

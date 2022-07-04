@@ -1,17 +1,16 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Dangnhap";
-    Layout = "~/Views/Shared/_LayoutManga.cshtml";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
 }
+@ViewBag.Thongbao
 <div id="login" data-target-group="idForm">
     <div class="Thongbao">
-    @ViewBag.Thongbao
-         </div>
+    </div>
     <header class="border-bottom px-4 px-md-6 py-4">
         <h2 class="font-size-3 mb-0 d-flex align-items-center"><i class="flaticon-user mr-3 font-size-5"></i>Tài Khoản</h2>
     </header>
 
-    @using (Html.BeginForm("Dangnhap", "Auth"))
+    @using (Html.BeginForm())
     {
         @Html.ValidationSummary(true)
         <div class="p-4 p-md-6">

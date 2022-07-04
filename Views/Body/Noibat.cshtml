@@ -1,0 +1,8 @@
+﻿@model  IEnumerable<MangaStore.Models.NoiBat>
+@foreach (var item in Model)
+{
+    <a href="@Url.Action("Noibattheo", "Body",new { id = item.MaNoiBat})">
+        @item.NoiBat1
+    </a>
+}
+

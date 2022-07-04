@@ -45,24 +45,41 @@ namespace MangaStore.Controllers
             var nhaxuatban = from nxb in data.NHAXUATBANs select nxb;
             return PartialView(nhaxuatban);
         }
-        public ActionResult TruyentheoNXB(int id)
+        public ActionResult TruyentheoNXB(int id, int? page)
         {
-            var truyen1 = from n in data.TRUYENs
+            int pageSize = 8;
+            int pageNum = (page ?? 1);
+            var truyen = from n in data.TRUYENs
                           join nxb in data.MAQUANHEs on n.MaTruyen equals nxb.MaTruyen
                           where nxb.MaNXB == id
                           select n;
-            return View(truyen1);
+            return View(truyen.ToPagedList(pageNum, pageSize));
         }
         public ActionResult Gia()
         {
             var gia = from g in data.GIás select g;
             return PartialView(gia);
         }
+        public ActionResult TruyentheoGiaTri(int id, int? page)
+        {
+            int pageSize = 8;
+            int pageNum = (page ?? 1);
+            var truyen = from gt in data.TRUYENs
+                          join g in data.GiaTruyens on gt.MaTruyen equals g.MaTruyen
+                          where g.MaGia == id
+                          select gt;
+            return View(truyen.ToPagedList(pageNum, pageSize));
+        }
         [HttpPost]
         public ActionResult Search(String a)
         {
             var truyen = data.TRUYENs.Where(s => s.TenTruyen.Contains(a)).ToList();
             return View(truyen);
+        }
+        public ActionResult Chitiettruyen(int id)
+        {
+            var truyen = from s in data.TRUYENs where s.MaTruyen == id select s;
+            return View(truyen.Single());
         }
     }   
 }

@@ -4,7 +4,7 @@
 <div class=" list-group" style="font-size: 17px;line-height: 2;">
     @foreach (var item in Model)
     {
-    <a href="@Url.Action("SPTheoGiá", "Kind",new { id = item.MaGia }) class="list-group">
+    <a href="@Url.Action("TruyentheoGiaTri", "Kind",new { id = item.MaGia })" class="list-item">
         <input type=checkbox /> @item.GiaTri
     </a>
     }

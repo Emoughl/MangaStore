@@ -1,0 +1,8 @@
+﻿@model  IEnumerable<MangaStore.Models.BanChay>
+    @foreach (var item in Model)
+    {
+        <a href="@Url.Action("Banchaytheo", "Body",new { id = item.MaBanChay})">
+            @item.BanChay1
+        </a>
+    }
+</div>

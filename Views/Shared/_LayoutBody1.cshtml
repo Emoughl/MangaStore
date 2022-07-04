@@ -1,0 +1,102 @@
+﻿@using MangaStore.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<TRUYEN>
+    <div class="bg-gray-200 space-2 space-lg-3" id="truyen-ban-chay">
+        <div class="container ">
+            <div class="d-md-flex justify-content-between">
+                <header class="mb-4">
+                    <h2 class="font-size-7" style="color: cornflowerblue;">Truyện Bán Chạy</h2>
+                </header>
+                <select class="js-select selectpicker dropdown-select orderby" name="orderby" data-style="border-bottom shadow-none outline-none py-2" style="border: #ffffff">
+                    <option value="#" selected="selected">Bán Chạy</option>
+                    <option value="/Body/Banchaytheo/1">Bán Chạy Theo Tuần</option>
+                    <option value="/Body/Banchaytheo/2">Bán Chạy Theo Tháng</option>
+                    <option value="/Body/Banchaytheo/3">Bán Chạy Theo Năm</option>
+                </select>
+                <script>
+                    window.addEventListener('load', () => {
+                        $('#truyen-ban-chay select[name="orderby"]').change(e => {
+                            e.preventDefault();
+                            $.ajax({
+                                url: e.target.value,
+                                dataType: 'html',
+                                success: raw => {
+                                    const body = $(document.createElement('div').outerHTML).html(raw).find('#truyen-ban-chay .products').html();
+                                    $('#truyen-ban-chay .products').html(body);
+                                },
+                            });
+                        });
+                    });
+                </script>
+            </div>
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="example1" role="tabpanel" aria-labelledby="example1-tab">
+                    <ul class="products list-unstyled row no-gutters row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-wd-6 border-top border-left my-0">
+                        @foreach (var truyen in Model)
+                        {
+                            <li class="product col">
+                                <div class="product__inner overflow-hidden bg-white p-3 p-md-4d875">
+                                    <div class="woocommerce-LoopProduct-link woocommerce-loop-product__link d-block position-relative">
+                                        <div class="woocommerce-loop-product__thumbnail">
+                                            <a href="@Url.Action("Chitiettruyen", "Body", new { id = truyen.MaTruyen })" class="d-block"><img src="~/assets/img/ImagesBody/@truyen.Anhbia" style="height: 244px;" class="img-fluid d-block mx-auto attachment-shop_catalog size-shop_catalog wp-post-image img-fluid" alt="image-description" title="@truyen.Mota"></a>
+           
+                                        </div>
+                                        <div class="woocommerce-loop-product__body product__body pt-3 bg-white">
+                                            <h2 class="woocommerce-loop-product__title product__title h6 text-lh-md mb-1 text-height-2 crop-text-2 h-dark"><span>@truyen.TenTruyen</span> </h2>
+                                            <div class="price d-flex align-items-center font-weight-medium font-size-3">
+                                                <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>@truyen.Giaban</span>
+                                            </div>
+                                        </div>
+                                        <div class="product__hover d-flex align-items-center">
+                                            <a href="#" class="text-uppercase text-dark h-dark font-weight-medium mr-auto" data-toggle="tooltip" data-placement="right" title="MUA NGAY">
+                                                <span class="product__add-to-cart">MUA NGAY</span>
+                                                <span class="product__add-to-cart-icon font-size-4"><i class="flaticon-icon-126515"></i></span>
+                                            </a>
+                                            <a href="#" class="h-p-bg btn btn-outline-primary border-0">
+                                                <i class="flaticon-heart"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        }
+                    </ul>
+                    Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber)/@Model.PageCount
+                    <ul class="pagination pagination__custom justify-content-md-center flex-nowrap flex-md-wrap overflow-auto overflow-md-visble">
+                        <li class="MenuTrang">
+                            @Html.PagedListPager(Model, page => Url.Action("Banchaytheo", "Body", new { page = page }))
+                            <script>
+                                window.addEventListener('load', () => {
+                                    $('#truyen-ban-chay .MenuTrang .pagination li a').click(e => {
+                                        e.preventDefault();
+                                        $.ajax({
+                                            url: e.target.href,
+                                            dataType: 'html',
+                                            success: raw => {
+                                                const body = $(document.createElement('div').outerHTML).html(raw).find('#truyen-ban-chay .products').html();
+                                                $('#truyen-ban-chay .products').html(body);
+                                            },
+                                        });
+                                    });
+                                });
+                            </script>
+                        </li>
+                    </ul>
+                    <style>
+                        .MenuTrang li {
+                            display: inline;
+                        }
+
+                        .pagination > li > a, .pagination > li > span {
+                            padding: 6px 24px;
+                            border: 1px solid #ddd;
+                            background-color: #ffffff;
+                            text-decoration: none;
+                            float: right;
+                            font-size: 25px;
+                        }
+                    </style>
+                </div>
+            </div>
+        </div>
+    </div>

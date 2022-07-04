@@ -1,15 +1,16 @@
 ﻿
 @{
     ViewBag.Title = "Dangky";
-    Layout = "~/Views/Shared/_LayoutManga.cshtml";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
 }
         <div id="signup" data-target-group="idForm">
 
             <header class="border-bottom px-4 px-md-6 py-4">
                 <h2 class="font-size-3 mb-0 d-flex align-items-center"><i class="flaticon-resume mr-3 font-size-5"></i>Đăng Ký</h2>
             </header>
-            @using (Html.BeginForm("Dangky", "Auth"))
+            @using (Html.BeginForm())
             {
+                @Html.ValidationSummary(true)
                 <div class="p-4 p-md-6">
 
                     <div class="form-group mb-4">
@@ -18,8 +19,8 @@
                             <div class="input-wrapper">
                                 <i class="fas fa-envelope"></i>
                                 <input type="email" class="form-control rounded-0 height-4 px-4" name="email" id="signinEmail1" placeholder="Hãy nhập Email" aria-label="Hãy nhập Email" aria-describedby="signinEmailLabel1" required>
+                                @ViewData["Loi1"]
                             </div>
-                            @ViewData["Loi1"]
                         </div>
                     </div>
 
@@ -42,7 +43,8 @@
                             <div class="input-wrapper">
                                 <i class="fas fa-unlock"></i>
                                 <input type="password" class="form-control rounded-0 height-4 px-4" name="confirmPassword" id="signupConfirmPassword" placeholder="Hãy Nhập Lại Mật Khẩu" aria-label="Hãy Nhập Lại Mật Khẩu" aria-describedby="signupConfirmPasswordLabel" required>
-                                </div>
+                                @ViewData["Loi3"]
+                            </div>
                             </div>
                         </div>
 

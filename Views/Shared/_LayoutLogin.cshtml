@@ -1,16 +1,7 @@
-﻿
+﻿<!DOCTYPE html>
 
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-
-    <title>Manga World - Thiên Đường Truyện Tranh</title>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <link rel="shortcut icon" href="~/assets/Logo2.ico">
-    <link rel="icon" href="~/assets/Logo2.ico" />
 
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
@@ -24,16 +15,10 @@
     <link rel="stylesheet" href="/assets/css/theme.css">
     <link rel="stylesheet" href="/assets/css/custom.css">
     <meta name="google-signin-client_id" content="375929234849-67btprrttkrfouije42kf676ltgst547.apps.googleusercontent.com">
-
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
 </head>
 <body>
-
-    @Html.Partial("_LayoutMangaHeader")
-    @Html.Partial("_LayoutBody2")
-    @Html.Partial("_LayoutBody1")
-    @RenderBody()
-    @Html.Partial("_LayoutBody3")
-    @Html.Partial("_LayoutMangaFooter")
 
     <script src="/assets/vendor/jquery/dist/jquery.min.js"></script>
     <script src="/assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
@@ -50,52 +35,6 @@
     <script src="/assets/js/components/hs.slick-carousel.js"></script>
     <script src="/assets/js/components/hs.show-animation.js"></script>
     <script src="/assets/js/components/hs.selectpicker.js"></script>
-
-
-    <script>
-        $(document).on('ready', function () {
-            // initialization of unfold component
-            $.HSCore.components.HSUnfold.init($('[data-unfold-target]'));
-
-            // initialization of malihu scrollbar
-            $.HSCore.components.HSMalihuScrollBar.init($('.js-scrollbar'));
-
-            // initialization of slick carousel
-            $.HSCore.components.HSSlickCarousel.init('.js-slick-carousel');
-
-            // initialization of show animations
-            $.HSCore.components.HSShowAnimation.init('.js-animation-link');
-
-            // init zeynepjs
-            var zeynep = $('.zeynep').zeynep({
-                onClosed: function () {
-                    // enable main wrapper element clicks on any its children element
-                    $("body main").attr("style", "");
-
-                    console.log('the side menu is closed.');
-                },
-                onOpened: function () {
-                    // disable main wrapper element clicks on any its children element
-                    $("body main").attr("style", "pointer-events: none;");
-
-                    console.log('the side menu is opened.');
-                }
-            });
-
-            // handle zeynep overlay click
-            $(".zeynep-overlay").click(function () {
-                zeynep.close();
-            });
-
-            // open side menu if the button is clicked
-            $(".cat-menu").click(function () {
-                if ($("html").hasClass("zeynep-opened")) {
-                    zeynep.close();
-                } else {
-                    zeynep.open();
-                }
-            });
-        });</script>
+    @RenderBody()
 </body>
 </html>
-
