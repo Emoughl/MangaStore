@@ -11,6 +11,13 @@
                 <a href="/Body/Index" class="h-primary">Trang Chủ</a>
                 <span class="breadcrumb-separator mx-1"><i class="fas fa-angle-right"></i></span>Chi Tiết Truyện
             </nav>
+            <ul class="nav align-self-center ml-auto ml-xl-0">
+                <li class="d-none d-md-block nav-item"><a href="home-v8.html#" class="nav-link link-black-100"><i class="glph-icon flaticon-heart font-size-4"></i></a></li>
+
+                <li class="d-none d-md-block nav-item"><a href="/Auth/Dangnhap" class="nav-link link-black-100"><i class="glph-icon flaticon-user font-size-4"></i></a></li>
+                @Html.Action("GiohangPartial", "Giohang")
+
+            </ul>
         </div>
     </div>
 </div>
@@ -20,7 +27,7 @@
             <figure class="woocommerce-product-gallery__wrapper pt-8 mb-0">
                 <div class="js-slick-carousel u-slick" data-pagi-classes="text-center u-slick__pagination my-4">
                     <div class="js-slide">
-                        <img src="~/assets/img/ImagesBody/@Model.Anhbia" width="75%" alt="Image Description" class="mx-auto img-fluid">
+                        <img src="~/assets/img/ImagesBody/@Model.Anhbia" width="400" alt="Image Description" class="mx-auto img-fluid">
                     </div>
                 </div>
             </figure>
@@ -30,7 +37,7 @@
                 <h1 class="product_title entry-title font-size-7 mb-3">@Model.TenTruyen</h1>
                 <p class="price font-size-22 font-weight-medium mb-3">
                     <span class="woocommerce-Price-amount amount">
-                        <span class="woocommerce-Price-currencySymbol">$</span>@Model.Giaban
+                        <span class="woocommerce-Price-currencySymbol"></span>@Model.Giaban đ
                     </span>
                 </p>
             </div>
@@ -39,11 +46,11 @@
             </div>
             <div>
                 <form class="cart d-md-flex align-items-center" method="post" enctype="multipart/form-data">
-                    <li class="mr-6 mb-4 mb-md-0">
-                        <a href="#" class="h-primary"><i class="flaticon-heart mr-2"></i>Thêm Vào Yêu Thích</a>
-                    </li>
+                    <div class="mr-6 mb-4 mb-md-0">
+                        <a href="#" class="h-primary"><i class="flaticon-heart mr-2"style="margin-left: 30px;"></i>Thêm Vào Yêu Thích</a>
+                    </div>
                     <div id="Datmua">
-                        <a href="@Url.Action("Themgiohang", "Giohang", new { id = Model.MaTruyen, strURL = Request.Url.ToString() })" class="list-group-item">
+                        <a href="@Url.Action("ThemGiohang", "GioHang", new { @iMaTruyen = @Model.MaTruyen, @strURL = Request.Url.ToString() })">
                             ĐẶT MUA
                         </a>
                     </div>
@@ -60,7 +67,7 @@
         background-color: black;
         color: white;
         width: 200px;
-        height: 50x;
+        height: 50px;
         display: block;
         float: right;
         text-align: center;

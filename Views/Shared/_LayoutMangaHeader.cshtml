@@ -22,13 +22,11 @@
                 </div>
       
                 <ul class="nav align-self-center ml-auto ml-xl-0">
-                    <li class="glph-icon flaticon-user font-size-4" data-toggle="dropdown"></li>
-                    <li class="dropdown-menu">
-                        <a href="/Auth/Dangnhap" class="dropdown-item">Đăng Nhập</a>
-                        <a href="/Auth/Dangky" class="dropdown-item">Đăng Ký </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="javascript:document.getElementById('logoutForm').submit()"style=" padding: 3px 35px;">Thoát</a>
-                    </li>
+                    <li class="d-none d-md-block nav-item"><a href="home-v8.html#" class="nav-link link-black-100"><i class="glph-icon flaticon-heart font-size-4"></i></a></li>
+                 
+                    <li class="d-none d-md-block nav-item"><a href="/Auth/Dangnhap" class="nav-link link-black-100"><i class="glph-icon flaticon-user font-size-4"></i></a></li>
+                    @Html.Action("GiohangPartial", "Giohang")
+
                 </ul>
           </div>
         </div>

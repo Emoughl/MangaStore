@@ -41,7 +41,7 @@ namespace MangaStore.Controllers
                 {
                     ViewBag.Thongbao = "Bạn đã đăng nhập thành công";
                     Session["Email"] = us;
-                    return RedirectToAction("Index", "Auth");
+                    return RedirectToAction("Index", "Body");
                 }
                 else 
                     ViewBag.Thongbao = "Tên đăng nhập hoặc mật khẩu không hợp lệ";
@@ -79,7 +79,6 @@ namespace MangaStore.Controllers
                 us.Matkhau = matkhau;
                 db.Users.InsertOnSubmit(us);
                 db.SubmitChanges();
-                Session["DangNhapThongBao"] = "Đã Đăng Ký Thành Công";
                 return RedirectToAction("Dangnhap", "Auth");
             }
             return this.Dangky();

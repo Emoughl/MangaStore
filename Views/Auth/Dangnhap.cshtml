@@ -40,18 +40,7 @@
 
             <div class="d-flex justify-content-between mb-5 align-items-center">
 
-                <div class="js-form-message">
-                    <div class="custom-control custom-checkbox d-flex align-items-center text-muted">
-                        <input type="checkbox" class="custom-control-input" id="termsCheckbox" name="termsCheckbox" required>
-                        <label class="custom-control-label" for="termsCheckbox">
-                            <span class="font-size-2 text-secondary-gray-700">
-                                Ghi nhớ đăng nhập
-                            </span>
-                        </label>
-                    </div>
-                </div>
-
-                <a class="text-dark font-size-2 t-d-u link-muted font-weight-medium" href="/Auth/Quenmatkhau">Quên Mật Khẩu</a>
+                <a class="text-dark font-size-2 t-d-u link-muted font-weight-medium" style="text-align:center;" href="/Auth/Quenmatkhau">Quên Mật Khẩu</a>
             </div>
             <div class="mb-4d75">
                 <button type="submit" class="btn btn-block py-3 rounded-0 btn-dark">Đăng Nhập</button>
@@ -62,6 +51,15 @@
         </div>
         <div class="loginbtn">
             <div class="g-signin2" data-onsuccess="onSignIn"></div>
+            <a href="/Body/Index" onclick="signOut();">Sign out</a>
+            <script>
+                function signOut() {
+                    var auth2 = gapi.auth2.getAuthInstance();
+                    auth2.signOut().then(function () {
+                        console.log('User signed out.');
+                    });
+                }
+            </script>
             <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-layout="rounded" data-auto-logout-link="true" data-use-continue-as="false"></div>
 
         </div>

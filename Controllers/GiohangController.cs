@@ -7,12 +7,8 @@ using System.Web.Mvc;
 
 namespace MangaStore.Controllers
 {
-    public class GiohangController : Controller
+    public class GioHangController : Controller
     {
-        public ActionResult Index()
-        {
-            return View();
-        }
         DataMangaDataContext db = new DataMangaDataContext();
         public List<Giohang> Laygiohang()
         {
@@ -24,13 +20,13 @@ namespace MangaStore.Controllers
             }
             return lstGiohang;
         }
-        public ActionResult ThemGiohang(int id, string strURL)
+        public ActionResult ThemGiohang(int iMaTruyen, string strURL)
         {
             List<Giohang> lstGiohang = Laygiohang();
-            Giohang sanpham = lstGiohang.Find(n => n.iMaTruyen == id);
+            Giohang sanpham = lstGiohang.Find(n => n.iMaTruyen == iMaTruyen);
             if (sanpham == null)
             {
-                sanpham = new Giohang(id);
+                sanpham = new Giohang(iMaTruyen);
                 lstGiohang.Add(sanpham);
                 return Redirect(strURL);
             }
@@ -63,12 +59,51 @@ namespace MangaStore.Controllers
         public ActionResult GioHang()
         {
             List<Giohang> lstGiohang = Laygiohang();
+            if (lstGiohang.Count == 0)
+            {
+                return RedirectToAction("Index", "Kind");
+            }
             ViewBag.Tongsoluong = TongSoLuong();
             ViewBag.Tongtien = TongTien();
+            return View(lstGiohang);
+        }
+        public ActionResult GiohangPartial()
+        {
+            ViewBag.Tongsoluong = TongSoLuong();
+            return PartialView();
+        }
+        public ActionResult Xoagiohang(int id)
+        {
+            List<Giohang> lstGiohang = Laygiohang();
+            Giohang sanpham = lstGiohang.SingleOrDefault(n => n.iMaTruyen == id);
+            if (sanpham != null)
+            {
+                lstGiohang.RemoveAll(n => n.iMaTruyen == id);
+                return RedirectToAction("GioHang");
+
+            }
             if (lstGiohang.Count == 0)
+            {
                 return RedirectToAction("Index", "Kind");
-            else
-                return View(lstGiohang);
+            }
+            return RedirectToAction("GioHang");
+        }
+        public ActionResult CapnhatGiohang(int id, FormCollection f)
+        {
+
+            List<Giohang> lstGiohang = Laygiohang();
+            Giohang sanpham = lstGiohang.SingleOrDefault(n => n.iMaTruyen == id);
+            if (sanpham != null)
+            {
+                sanpham.iSoluong = int.Parse(f["txtSoluong"].ToString());
+            }
+            return RedirectToAction("GioHang", "Giohang");
+        }
+        public ActionResult Xoatatcagiohang()
+        {
+            List<Giohang> lstGiohang = Laygiohang();
+            lstGiohang.Clear();
+            return RedirectToAction("Index", "Kind");
         }
     }
 }

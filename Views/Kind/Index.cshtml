@@ -1,6 +1,6 @@
-﻿@using MangaStore.Models
-@using PagedList.Mvc;
-@model PagedList.PagedList<TRUYEN>
+﻿    @using MangaStore.Models
+    @using PagedList.Mvc;
+    @model PagedList.PagedList<TRUYEN>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutKind.cshtml";
@@ -24,7 +24,7 @@
                                     </div>
                                 </div>
                                 <div class="product__hover d-flex align-items-center">
-                                    <a href="#" class="text-uppercase text-dark h-dark font-weight-medium mr-auto" data-toggle="tooltip" data-placement="right" title="MUA NGAY">
+                                    <a href="@Url.Action("Themgiohang", "Giohang",new { id = truyens.MaTruyen, strURL= Request.Url.ToString() })" class="text-uppercase text-dark h-dark font-weight-medium mr-auto" data-toggle="tooltip" data-placement="right" title="MUA NGAY">
                                         <span class="product__add-to-cart">MUA NGAY</span>
                                         <span class="product__add-to-cart-icon font-size-4"><i class="flaticon-icon-126515"></i></span>
                                     </a>
