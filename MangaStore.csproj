@@ -400,6 +400,11 @@
     <Content Include="Views\Taikhoan\Create.cshtml" />
     <Content Include="Views\Taikhoan\Delete.cshtml" />
     <Content Include="Views\Taikhoan\Edit.cshtml" />
+    <Content Include="Views\Admin\Truyen.cshtml" />
+    <Content Include="Views\Admin\Chitiettruyen.cshtml" />
+    <Content Include="Views\Admin\Themmoitruyen.cshtml" />
+    <Content Include="Views\Admin\Xoatruyen.cshtml" />
+    <Content Include="Views\Admin\Suatruyen.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

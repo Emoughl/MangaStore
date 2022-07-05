@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 20.375, 13.125" name="DataManga">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 20.375, 14" name="DataManga">
   <DataContextMoniker Name="/DataMangaDataContext" />
   <nestedChildShapes>
     <classShape Id="8fa8c4fb-b1ae-4aa4-9ac1-c8f6e2dfd960" absoluteBounds="14, 7.25, 2, 1.2586491059263558">
@@ -68,12 +68,6 @@
         <elementListCompartment Id="52a93fb3-6ec4-42ff-9933-714cf46d7c78" absoluteBounds="5.14, 9.96, 1.9700000000000002, 0.69864910592635465" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="c1f4bcc3-e674-4aac-ac1b-883560bfa020" absoluteBounds="14.875, 11.375, 2, 1.4694238504767441">
-      <DataClassMoniker Name="/DataMangaDataContext/User" />
-      <nestedChildShapes>
-        <elementListCompartment Id="dd7dea13-bcd3-45e0-8922-09a22cf28e7b" absoluteBounds="14.89, 11.835, 1.9700000000000002, 0.90942385047674179" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <associationConnector edgePoints="[(7.125 : 7.85971192523837); (7.5 : 7.85971192523837)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataMangaDataContext/GIá/GIá_GiaTruyen" />
       <nodes>
@@ -129,7 +123,7 @@
         <classShapeMoniker Id="f1ccc3d2-61b3-4d2f-bdc6-ac3e2e68abd2" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(12.125 : 8.375); (12.125 : 7.6874995); (11.6458333333333 : 7.6874995 : JumpStart); (11.4791666666667 : 7.6874995 : JumpEnd); (9.5 : 7.6874995)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(12.125 : 8.375); (12.125 : 7.6874995); (11.6458333333333 : 7.6874995 : JumpStart); (11.4791666666667 : 7.6874995 : JumpEnd); (10.3958333333333 : 7.6874995 : JumpStart); (10.2291666666667 : 7.6874995 : JumpEnd); (9.5 : 7.6874995)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataMangaDataContext/TRUYEN/TRUYEN_GiaTruyen" />
       <nodes>
         <classShapeMoniker Id="ce37c1b8-6d8b-461f-99df-90dabd7ab01d" />
@@ -189,18 +183,24 @@
         <elementListCompartment Id="158d4a22-e831-42aa-9dd3-f1da45239004" absoluteBounds="14.64, 9.46, 1.9700000000000002, 1.541748084127903" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(15.75 : 11.375); (15.75 : 11.1017480841279)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/DataMangaDataContext/User/User_DONDATHANG" />
-      <nodes>
-        <classShapeMoniker Id="c1f4bcc3-e674-4aac-ac1b-883560bfa020" />
-        <classShapeMoniker Id="d7961b9f-f99f-4fbd-a8ae-7c74efe3a1ef" />
-      </nodes>
-    </associationConnector>
     <classShape Id="056d24f6-ba9f-4e36-9bf7-45c27aad4bd1" absoluteBounds="18.125, 10.375, 2, 1.4694238504767418">
       <DataClassMoniker Name="/DataMangaDataContext/Admin" />
       <nestedChildShapes>
         <elementListCompartment Id="88be509f-d02c-4323-9162-d5ca91eb7fda" absoluteBounds="18.14, 10.835, 1.9700000000000002, 0.90942385047674179" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="4cb49116-c592-4550-b153-5730f6b8608b" absoluteBounds="15, 11.875, 2, 1.8909733395775157">
+      <DataClassMoniker Name="/DataMangaDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b4e986bb-b538-40cb-9fdf-75a41c29a4eb" absoluteBounds="15.015, 12.335, 1.9700000000000002, 1.3309733395775159" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(15.8125 : 11.875); (15.8125 : 11.1017480841279)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataMangaDataContext/User/User_DONDATHANG" />
+      <nodes>
+        <classShapeMoniker Id="4cb49116-c592-4550-b153-5730f6b8608b" />
+        <classShapeMoniker Id="d7961b9f-f99f-4fbd-a8ae-7c74efe3a1ef" />
+      </nodes>
+    </associationConnector>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

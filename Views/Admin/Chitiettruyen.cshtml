@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Chitiettruyen";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container"  style="margin-top : 100px">
+    <div class="row">
+        <div class="col-md-5 woocommerce-product-gallery woocommerce-product-gallery--with-images images">
+            <figure class="woocommerce-product-gallery__wrapper pt-8 mb-0" >
+                <div class="js-slick-carousel u-slick" data-pagi-classes="text-center u-slick__pagination my-4">
+                    <div class="js-slide">
+                        <img src="~/assets/img/ImagesBody/@Model.Anhbia" width="400" alt="Image Description" class="mx-auto img-fluid">
+                    </div>
+                </div>
+            </figure>
+        </div>
+        <div class="col-md-7 pl-0 summary entry-summary border-left">
+            <div class="space-top-2 px-4 px-xl-7 border-bottom pb-5">
+                <h1 class="product_title entry-title font-size-7 mb-3">@Model.TenTruyen</h1>
+                <p class="price font-size-22 font-weight-medium mb-3">
+                    <span class="woocommerce-Price-amount amount" style="font-size: 40px;">
+                        <span class="woocommerce-Price-currencySymbol"></span>@Model.Giaban đ
+                    </span>
+                </p>
+            </div>
+            <div class="woocommerce-product-details__short-description font-size-2 mb-5">
+                <p class="mota" style="padding: 20px;">@Model.Mota</p>
+            </div>
+            <div class="woocommerce-product-details__short-description font-size-2 mb-5" style="border-top: 1px solid #e3e6f0 !important;margin-left:20px">
+                <span class="ngaycapnhat">Ngày Cập Nhật : @String.Format("{0:dd/MM/yyyy}", @Model.Ngaycapnhat)</span>
+                <span class="soluongt"style="margin-left: 230px;">Số Lượng :  @Model.Soluongton</span>
+            </div>
+        </div>
+    </div>
+    <p style="margin-left: 960px;">
+        @Html.ActionLink("Sửa", "Suatruyen", new { id = Model.MaTruyen }) |
+        @Html.ActionLink("Trở về", "Truyen")
+    </p>
+</div>
+

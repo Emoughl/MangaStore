@@ -93,14 +93,6 @@
       <Association Name="THELOAI_MACOMIC" Member="MACOMICs" ThisKey="MaTL" OtherKey="MaTL" Type="MACOMIC" />
     </Type>
   </Table>
-  <Table Name="dbo.[User]" Member="Users">
-    <Type Name="User">
-      <Column Name="MaUser" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Matkhau" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Association Name="User_DONDATHANG" Member="DONDATHANGs" ThisKey="MaUser" OtherKey="MaUser" Type="DONDATHANG" />
-    </Type>
-  </Table>
   <Table Name="dbo.TRUYEN" Member="TRUYENs">
     <Type Name="TRUYEN">
       <Column Name="MaTruyen" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -151,6 +143,16 @@
       <Column Name="UserAdmin" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="PassAdmin" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="Hoten" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[User]" Member="Users">
+    <Type Name="User">
+      <Column Name="MaUser" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Matkhau" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Diachi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Sodienthoai" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="User_DONDATHANG" Member="DONDATHANGs" ThisKey="MaUser" OtherKey="MaUser" Type="DONDATHANG" />
     </Type>
   </Table>
 </Database>

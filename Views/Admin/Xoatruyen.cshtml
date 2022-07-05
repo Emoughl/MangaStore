@@ -1,0 +1,77 @@
+﻿@model MangaStore.Models.TRUYEN
+
+@{
+    ViewBag.Title = "Xoatruyen";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div style="margin-left: 200px; margin-top : 100px;">
+    <h2>Xóa Truyện</h2>
+
+    <h3>Bạn Chắc Chắn Muốn Xóa Truyện Này Chứ</h3>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                Mã Truyện :
+            </dt>
+            <dd>
+                @Model.MaTruyen
+            </dd>
+            <dt>
+                Tên Truyện :
+            </dt>
+            <dd>
+                @Model.TenTruyen
+            </dd>
+
+            <dt>
+                Mô Tả :
+            </dt>
+
+            <dd>
+                @Model.Mota
+            </dd>
+
+            <dt>
+                Ảnh Bìa :
+            </dt>
+
+            <dd>
+                <img width="200" src="~/assets/img/ImagesBody/@Model.Anhbia" />
+            </dd>
+
+            <dt>
+                Giá Bán
+            </dt>
+
+            <dd>
+                @Model.Giaban
+            </dd>
+
+            <dt>
+                Số Lượng
+            </dt>
+
+            <dd>
+                @Model.Soluongton
+            </dd>
+
+            <dt>
+               Ngày Cập Nhật :
+            </dt>
+
+            <dd>
+                @String.Format("{0:dd/MM/yyyy}", @Model.Ngaycapnhat)
+            </dd>
+
+        </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color"style="margin-left: 900px;">
+            <input type="submit" value="Xóa" class="btn btn-default" /> |
+            @Html.ActionLink("Trở Về", "Truyen")
+        </div>
+    }
+</div>

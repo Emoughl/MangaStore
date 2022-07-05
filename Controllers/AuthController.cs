@@ -60,6 +60,8 @@ namespace MangaStore.Controllers
             var email= collection["email"];
             var matkhau = collection["password"];
             var matkhaunhaplai = collection["Confirmpassword"];
+            var diachi = collection["diachi"];
+            var sodienthoai = collection["sodienthoai"];
             if (String.IsNullOrEmpty(email))
             {
                 ViewData["Loi1"] = "Phải nhập tên đăng nhập";
@@ -73,10 +75,20 @@ namespace MangaStore.Controllers
             {
                 ViewData["Loi3"] = "Nhập lại mật khẩu";
             }
+            if (String.IsNullOrEmpty(diachi))
+            {
+                ViewData["Loi4"] = "Hãy Nhập Địa Chỉ";
+            }
+            if (String.IsNullOrEmpty(sodienthoai))
+            {
+                ViewData["Loi5"] = "Hãy Nhập Số Điện Thoại";
+            }
             else
             {
                 us.Email = email;
                 us.Matkhau = matkhau;
+                us.Diachi = diachi;
+                us.Sodienthoai = sodienthoai;
                 db.Users.InsertOnSubmit(us);
                 db.SubmitChanges();
                 return RedirectToAction("Dangnhap", "Auth");

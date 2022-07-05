@@ -31,7 +31,7 @@
                                                 <th class="product-name">Tên Truyện</th>
                                                 <th class="product-pic">Ảnh Bìa</th>
                                                 <th class="product-price">Đơn Giá</th>
-                                                <th class="product-quantity">Số Lượng</th>
+                                                <th class="product-detail">&nbsp;</th>
                                                 <th class="product-subtotal">Thành Tiền</th>
 
                                             </tr>
@@ -39,66 +39,54 @@
                                         <tbody>
                                             @foreach (var item in Model)
                                             {
-                                                <tr class="woocommerce-cart-form__cart-item cart_item">
-                                                    <td class="product-id" data-title="Product-Id">
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="ml-3 m-w-200-lg-down">
-                                                                <a href="#">@item.iMaTruyen</a>
-                                                            </div>
+                                            <tr class="woocommerce-cart-form__cart-item cart_item">
+                                                <td class="product-id" data-title="Product-Id">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="ml-3 m-w-200-lg-down">
+                                                            <a href="#">@item.iMaTruyen</a>
                                                         </div>
-                                                    </td>
-                                                    <td class="product-name" data-title="Product-Name">
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="ml-3 m-w-200-lg-down">
-                                                                <a href="#">@item.sTenTruyen</a>
-                                                            </div>
+                                                    </div>
+                                                </td>
+                                                <td class="product-name" data-title="Product-Name">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="ml-3 m-w-200-lg-down">
+                                                            <a href="#">@item.sTenTruyen</a>
                                                         </div>
-                                                    </td>
-                                                    <td class="product-pic" data-title="Pic">
-                                                        <img src="~/assets/img/ImagesBody/@item.sAnhbia" style="height: 250px;">
-                                                    </td>
-                                                    <td class="product-price" data-title="Price">
-                                                        <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">@String.Format("{0:0.000}", item.dDongia)</span>đ</span>
-                                                    </td>
-                                                    <td class="product-quantity">
-                                                        <div class="quantity d-flex align-items-center">
-
-                                                            <div class="border px-3 width-120">
-                                                                <div class="js-quantity">
-                                                                    <div class="d-flex align-items-center">
-
-                                                                        @ViewBag.Tongsoluong
-
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="product-subtotal" data-title="Total">
-                                                        <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">@String.Format("{0:0.000}", item.dThanhtien)</span>đ</span>
-                                                    </td>
+                                                    </div>
+                                                </td>
+                                                <td class="product-pic" data-title="Pic">
+                                                    <img src="~/assets/img/ImagesBody/@item.sAnhbia" style="height: 250px;">
+                                                </td>
+                                                <td class="product-price" data-title="Price">
+                                                    <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">@String.Format("{0:0.000}", item.dDongia)</span>đ</span>
+                                                <td class="product-price" data-title="Price">
+                                                    <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol"></span></span>
+                                                </td>
+                                                <td class="product-subtotal" data-title="Total">
+                                                    <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">@String.Format("{0:0.000}", item.dThanhtien)</span>đ</span>
+                                                </td>
 
 
-                                                </tr>
+                                            </tr>
                                             }
-                                            <tr>
-                                                <td colspan="9" style="text-align:center;"> Tổng tiền: @String.Format("{0:0.000}", ViewBag.Tongtien) VNĐ </td>
-                                            </tr>
-                                            <tr>
+                                        <tr>
+                                            <td colspan="9" style="text-align:center;"> Tổng tiền: @String.Format("{0:0.000}", ViewBag.Tongtien) VNĐ </td>
+                                        </tr>
+                                        <tr>
 
-                                                <td colspan="5" class="actions">
+                                            <td colspan="5" class="actions">
 
-                                                    <a href="@Url.Action("GioHang","Giohang")"> Trở Về Giỏ Hàng  </a>
-                                                </td>
+                                                <a href="@Url.Action("GioHang","Giohang")"> Trở Về Giỏ Hàng  </a>
+                                            </td>
 
 
-                                                <td colspan="5" class="actions">
+                                            <td colspan="6" class="actions">
 
-                                                    <a href="@Url.Action("Xoatatcagiohang","Giohang")"> Xóa tất cả giỏ hàng </a>
+                                                <a href="@Url.Action("Xoatatcagiohang","Giohang")"> Xóa tất cả giỏ hàng </a>
 
-                                                </td>
+                                            </td>
 
-                                            </tr>
+                                        </tr>
 
                                         </tbody>
                                     </table>
@@ -136,13 +124,21 @@
                 <input type="date" name="Ngaygiao" />
             </td>
         </tr>
+        <tr style="height:40px">
+            <td> Địa chỉ</td>
+            <td style="font-weight:bold">  @us.Sodienthoai</td>
+        </tr>
+        <tr style="height:40px">
+            <td> Số Điện Thoại</td>
+            <td style="font-weight:bold">  @us.Diachi</td>
+        </tr>
+
+
 
         <tr style="height:40px">
             <td></td>
             <td>
-                <form action="/Giohang/Xacnhandonhang">
-                    <input type="Submit" value="Xác Nhận Đặt Hàng" />
-                </form>
+                <a href="/Giohang/Xacnhandonhang" class="banner_btn rounded-0 btn btn-wide btn-primary-indigo text-white">Đặt Hàng</a>
             </td>
         </tr>
     }

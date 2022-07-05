@@ -1,0 +1,116 @@
+﻿@using MangaStore.Models;
+@using PagedList.Mvc;
+@model PagedList.PagedList<TRUYEN>
+@{
+    ViewBag.Title = "Truyen";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+@helper Trucate(string input, int length)
+{
+    if (input.Length < length)
+    {
+        @input
+    }
+    else
+    {
+        @input.Substring(0, length) <Text> ..... </Text>
+    }
+}
+<div style="margin-left: 100px; margin-top : 50px;">
+    <h2 style="color: red;">QUẢN LÝ TRUYỆN</h2>
+
+    <p>
+        @Html.ActionLink("THÊM MỚI", "Themmoitruyen")
+    </p>
+    <table class="table">
+        <tr>
+            <th width="250">
+                MÃ TRUYỆN
+            </th>
+            <th width="250">
+                TÊN TRUYỆN
+            </th>
+            <th width="400">
+                MÔ TẢ
+            </th>
+            <th width="100">
+                GIÁ BÁN
+            </th>
+            <th width="200">
+                ẢNH BÌA
+            </th>
+            <th width="200">
+                NGÀY CẬP NHẬT
+            </th>
+            <th width="100">
+                SỐ LƯỢNG
+            </th>
+            <th width="350"></th>
+        </tr>
+
+        @foreach (var item in Model.OrderBy(x => x.MaTruyen).Reverse())
+        {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaTruyen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenTruyen)
+        </td>
+        <td>
+            @Trucate(item.Mota, 100)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Giaban)
+        </td>
+        <td>
+            <img width="200" src="~/assets/img/ImagesBody/@item.Anhbia" />
+        </td>
+        <td>
+            @String.Format("{0:dd/MM/yyyy}", item.Ngaycapnhat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Soluongton)
+        </td>
+        <td>
+            @Html.ActionLink("Sửa", "Suatruyen", new { id = item.MaTruyen }) |
+            @Html.ActionLink("Chi tiết", "Chitiettruyen", new { id = item.MaTruyen }) |
+            @Html.ActionLink("Xóa", "Xoatruyen", new { id = item.MaTruyen })
+        </td>
+    </tr>
+        }
+
+
+    </table>
+    <div>
+        Trang @(Model.PageNumber>Model.PageCount?3:Model.PageNumber) /@Model.PageCount
+    </div>
+    <div class="Menutrang">
+        @Html.PagedListPager(Model, page => Url.Action("Truyen", new { page = page }))
+    </div>
+</div>
+
+    <style>
+        .Menutran li {
+            display: inline
+        }
+        .MenuTrang li {
+            display: inline;
+        }
+
+        .pagination > li > a, .pagination > li > span {
+            padding: 6px 24px;
+            border: 1px solid #ddd;
+            background-color: #ffffff;
+            text-decoration: none;
+            float: right;
+            font-size: 25px;
+        }
+        .pagination {
+            margin-left: 300px;
+        }
+    </style>
+
+
