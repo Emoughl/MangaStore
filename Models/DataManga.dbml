@@ -23,20 +23,7 @@
       <Column Name="MaTruyen" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="SoLuong" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
       <Column Name="Dongia" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Association Name="CHITIETDONHANG_DONDATHANG" Member="DONDATHANG" ThisKey="MaDonHang" OtherKey="MaDonHang" Type="DONDATHANG" Cardinality="One" />
       <Association Name="TRUYEN_CHITIETDONHANG" Member="TRUYEN" ThisKey="MaTruyen" OtherKey="MaTruyen" Type="TRUYEN" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.DONDATHANG" Member="DONDATHANGs">
-    <Type Name="DONDATHANG">
-      <Column Name="MaDonHang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Dathanhtoan" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="Tinhtranggiaohang" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="Ngaydat" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Ngaygiao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="MaUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="CHITIETDONHANG_DONDATHANG" Member="CHITIETDONHANG" ThisKey="MaDonHang" OtherKey="MaDonHang" Type="CHITIETDONHANG" IsForeignKey="true" />
-      <Association Name="User_DONDATHANG" Member="User" ThisKey="MaUser" OtherKey="MaUser" Type="User" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.GIá" Member="GIás">
@@ -146,6 +133,24 @@
       <Column Name="MaNoiBat" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="NoiBat" Member="NoiBat1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="NoiBat_IDNoiBat" Member="IDNoiBats" ThisKey="MaNoiBat" OtherKey="MaNoiBat" Type="IDNoiBat" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DONDATHANG" Member="DONDATHANGs">
+    <Type Name="DONDATHANG">
+      <Column Name="MaDonHang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Dathanhtoan" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Tinhtranggiaohang" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Ngaydat" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Ngaygiao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MaUser" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="User_DONDATHANG" Member="User" ThisKey="MaUser" OtherKey="MaUser" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Admin" Member="Admins">
+    <Type Name="Admin">
+      <Column Name="UserAdmin" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PassAdmin" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Hoten" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

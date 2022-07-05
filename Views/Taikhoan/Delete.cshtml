@@ -1,0 +1,47 @@
+﻿@model MangaStore.Models.User
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div style="margin-left: 400px; margin-top : 200px;">
+    <h3>XÁC NHẬN XÓA TÀI KHOẢN</h3>
+    <h4 style="color:red">Bạn chắc chắn xóa tài khoản này?</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Mã Tài Khoản:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaUser)
+        </dd>
+
+        <dt>
+            Email:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            Mật Khẩu :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Matkhau)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Quay Lại", "Index")
+        </div>
+    }
+</div>
+

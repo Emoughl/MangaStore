@@ -1,0 +1,45 @@
+﻿@model IEnumerable<MangaStore.Models.NHAXUATBAN>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div style="margin-left: 400px; margin-top : 200px;">
+    <h2 style="color: red;">QUẢN LÝ DANH SÁCH NHÀ XUẤT BẢN</h2>
+
+    <p>
+        @Html.ActionLink("THÊM MỚI", "Create")
+    </p>
+    <table class="table">
+        
+            
+        <tr>
+            <th>
+                MÃ NHÀ XUÂT BẢN
+            </th>
+
+            <th>
+                TÊN NHÀ XUÂT BẢN
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaNXB)
+
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenNXB)
+        </td>
+        <td>
+            @Html.ActionLink("Sửa", "Edit", new { id = item.MaNXB }) |
+            @Html.ActionLink("Xóa", "Delete", new { id = item.MaNXB })
+        </td>
+    </tr>
+        }
+
+    </table>
+</div>
+

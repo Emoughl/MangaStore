@@ -40,7 +40,7 @@
             <div>
                 <form class="cart d-md-flex align-items-center" method="post" enctype="multipart/form-data">
                     <div class="mr-6 mb-4 mb-md-0">
-                        <a href="#" class="h-primary"><i class="flaticon-heart mr-2"style="margin-left: 30px;"></i>Thêm Vào Yêu Thích</a>
+                        <a href="@Url.Action("ThemTruyenThich","Thich", new { @iMaTruyen = @Model.MaTruyen, @strURL = Request.Url.ToString() })" class="h-primary"><i class="flaticon-heart mr-2"style="margin-left: 30px;"></i>Thêm Vào Yêu Thích</a>
                     </div>
                     <div id="Datmua">
                         <a href="@Url.Action("ThemGiohang", "Giohang", new { @iMaTruyen = @Model.MaTruyen, @strURL = Request.Url.ToString() })">

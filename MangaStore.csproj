@@ -128,12 +128,17 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutUsController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\BodyController.cs" />
     <Compile Include="Controllers\ContactUsController.cs" />
     <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KindController.cs" />
+    <Compile Include="Controllers\NhaxuatbanController.cs" />
+    <Compile Include="Controllers\TaikhoanController.cs" />
+    <Compile Include="Controllers\TheloaiController.cs" />
+    <Compile Include="Controllers\ThichController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -146,13 +151,18 @@
       <DependentUpon>DataManga.dbml</DependentUpon>
     </Compile>
     <Compile Include="Models\Giohang.cs" />
+    <Compile Include="Models\Thich.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\admin1.css" />
+    <Content Include="assets\css\admin1.css" />
+    <Content Include="assets\css\admin2.css" />
     <Content Include="assets\css\custom.css" />
     <Content Include="assets\css\theme.css" />
     <Content Include="assets\favicon.ico" />
     <Content Include="assets\giohang.png" />
+    <Content Include="assets\img\6368811.png" />
     <Content Include="assets\img\bg1.png" />
     <Content Include="assets\img\favicon.png" />
     <Content Include="assets\img\ImagesBody\5dau.jpg" />
@@ -277,6 +287,7 @@
     <Content Include="assets\vendor\slick-carousel\slick\slick.css" />
     <Content Include="assets\vendor\slick-carousel\slick\slick.js" />
     <Content Include="assets\vendor\slick-carousel\slick\slick.min.js" />
+    <Content Include="Content\Admin.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -368,6 +379,27 @@
     <Content Include="Views\Shared\_LayoutGioHang.cshtml" />
     <Content Include="Views\Giohang\GiohangPartial.cshtml" />
     <Content Include="Views\Giohang\GioHang.cshtml" />
+    <Content Include="Views\Shared\_LayoutThich.cshtml" />
+    <Content Include="Views\Thich\Thich.cshtml" />
+    <Content Include="Views\Thich\ThichPartial.cshtml" />
+    <Content Include="Views\Giohang\Dathang.cshtml" />
+    <Content Include="Views\Giohang\Xacnhandonhang.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Views\Shared\_Layoutxndh.cshtml" />
+    <Content Include="Views\Admin\Login.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Nhaxuatban\Index.cshtml" />
+    <Content Include="Views\Nhaxuatban\Create.cshtml" />
+    <Content Include="Views\Nhaxuatban\Delete.cshtml" />
+    <Content Include="Views\Nhaxuatban\Edit.cshtml" />
+    <Content Include="Views\Theloai\Index.cshtml" />
+    <Content Include="Views\Theloai\Create.cshtml" />
+    <Content Include="Views\Theloai\Delete.cshtml" />
+    <Content Include="Views\Theloai\Edit.cshtml" />
+    <Content Include="Views\Taikhoan\Index.cshtml" />
+    <Content Include="Views\Taikhoan\Create.cshtml" />
+    <Content Include="Views\Taikhoan\Delete.cshtml" />
+    <Content Include="Views\Taikhoan\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

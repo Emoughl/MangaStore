@@ -1,0 +1,151 @@
+﻿
+@{
+    ViewBag.Title = "Dathang";
+    Layout = "~/Views/Shared/_LayoutGioHang.cshtml";
+}
+<div class="page-header border-bottom">
+    <div class="container">
+        <div class="d-md-flex justify-content-between align-items-center py-4">
+            <h1 class="page-title font-size-3 font-weight-medium m-0 text-lh-lg">Danh Sách Mua Hàng</h1>
+            <nav class="woocommerce-breadcrumb font-size-2">
+                <a href="/Kind/Index" class="h-primary">Thể Loại</a>
+                <span class="breadcrumb-separator mx-1"><i class="fas fa-angle-right"></i></span>Thông Tin Hàng Hóa
+            </nav>
+        </div>
+    </div>
+</div>
+<div class="site-content bg-punch-light overflow-hidden" id="content">
+    <div class="container">
+        <div class="row pb-8">
+            <div id="primary" class="content-area">
+                <main id="main" class="site-main ">
+                    <div class="page type-page status-publish hentry">
+
+                        <div class="entry-content">
+                            <div class="woocommerce">
+                                <form class="woocommerce-cart-form table-responsive" action="#" method="post">
+                                    <table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents">
+                                        <thead>
+                                            <tr>
+                                                <th class="product-id">Mã Truyện</th>
+                                                <th class="product-name">Tên Truyện</th>
+                                                <th class="product-pic">Ảnh Bìa</th>
+                                                <th class="product-price">Đơn Giá</th>
+                                                <th class="product-quantity">Số Lượng</th>
+                                                <th class="product-subtotal">Thành Tiền</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var item in Model)
+                                            {
+                                                <tr class="woocommerce-cart-form__cart-item cart_item">
+                                                    <td class="product-id" data-title="Product-Id">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="ml-3 m-w-200-lg-down">
+                                                                <a href="#">@item.iMaTruyen</a>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="product-name" data-title="Product-Name">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="ml-3 m-w-200-lg-down">
+                                                                <a href="#">@item.sTenTruyen</a>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="product-pic" data-title="Pic">
+                                                        <img src="~/assets/img/ImagesBody/@item.sAnhbia" style="height: 250px;">
+                                                    </td>
+                                                    <td class="product-price" data-title="Price">
+                                                        <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">@String.Format("{0:0.000}", item.dDongia)</span>đ</span>
+                                                    </td>
+                                                    <td class="product-quantity">
+                                                        <div class="quantity d-flex align-items-center">
+
+                                                            <div class="border px-3 width-120">
+                                                                <div class="js-quantity">
+                                                                    <div class="d-flex align-items-center">
+
+                                                                        @ViewBag.Tongsoluong
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="product-subtotal" data-title="Total">
+                                                        <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">@String.Format("{0:0.000}", item.dThanhtien)</span>đ</span>
+                                                    </td>
+
+
+                                                </tr>
+                                            }
+                                            <tr>
+                                                <td colspan="9" style="text-align:center;"> Tổng tiền: @String.Format("{0:0.000}", ViewBag.Tongtien) VNĐ </td>
+                                            </tr>
+                                            <tr>
+
+                                                <td colspan="5" class="actions">
+
+                                                    <a href="@Url.Action("GioHang","Giohang")"> Trở Về Giỏ Hàng  </a>
+                                                </td>
+
+
+                                                <td colspan="5" class="actions">
+
+                                                    <a href="@Url.Action("Xoatatcagiohang","Giohang")"> Xóa tất cả giỏ hàng </a>
+
+                                                </td>
+
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+</div>
+@using MangaStore.Models
+<h2 style="text-align:center">THÔNG TIN ĐẶT HÀNG</h2>
+@{
+    User us = (User)Session["Email"];
+}
+<table align="center">
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+        <tr style="height:40px">
+            <td> Người Dùng</td>
+            <td style="font-weight:bold">  @us.Email</td>
+        </tr>
+
+        <tr style="height:40px">
+            <td> Ngày đặt:</td>
+            <td style="font-weight:bold"> @DateTime.Now.ToShortDateString() </td>
+        </tr>
+        <tr style="height:40px">
+            <td> Ngày giao hàng:</td>
+            <td style="font-weight:bold">
+                <input type="date" name="Ngaygiao" />
+            </td>
+        </tr>
+
+        <tr style="height:40px">
+            <td></td>
+            <td>
+                <form action="/Giohang/Xacnhandonhang">
+                    <input type="Submit" value="Xác Nhận Đặt Hàng" />
+                </form>
+            </td>
+        </tr>
+    }
+</table>
+
+

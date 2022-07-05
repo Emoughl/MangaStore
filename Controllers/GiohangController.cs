@@ -105,5 +105,46 @@ namespace MangaStore.Controllers
             lstGiohang.Clear();
             return RedirectToAction("Index", "Kind");
         }
+        [HttpGet]
+        public ActionResult Dathang()
+        {
+            if (Session["Email"] == null || Session["Email"].ToString() == "")
+                return RedirectToAction("Dangnhap", "Auth");
+            if (Session["Giohang"] == null)
+                return RedirectToAction("Index", "Kind");
+
+
+            List<Giohang> lstGiohang = Laygiohang();
+            ViewBag.Tongsoluong = TongSoLuong();
+            ViewBag.Tongtien = TongTien();
+            return View(lstGiohang);
+        }
+        [HttpPost]
+        public ActionResult DatHang(FormCollection collection)
+        {
+            DONDATHANG ddh = new DONDATHANG();
+            User us = (User)Session["Email"];
+            List<Giohang> gh = Laygiohang();
+            ddh.MaUser = us.MaUser;
+            ddh.Ngaydat = DateTime.Now;
+            var ngaygiao = String.Format("{0:MM/dd/yyyy}", collection["Ngaygiao"]);
+            ddh.Ngaygiao = DateTime.Parse(ngaygiao);
+            db.DONDATHANGs.InsertOnSubmit(ddh);
+            db.SubmitChanges();        
+            foreach (var item in gh)
+            {
+                CHITIETDONHANG ctdh = new CHITIETDONHANG();
+                ctdh.MaDonHang = ddh.MaDonHang;
+                ctdh.MaTruyen = item.iMaTruyen;
+                db.CHITIETDONHANGs.InsertOnSubmit(ctdh);
+            }
+            db.SubmitChanges();
+            Session["Giohang"] = null;
+            return RedirectToAction("Xacnhandonhang", "Giohang");
+        }
+        public ActionResult Xacnhandonhang()
+        {
+            return View();
+        }
     }
 }
