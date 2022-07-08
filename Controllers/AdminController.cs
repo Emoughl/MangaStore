@@ -159,6 +159,35 @@ namespace MangaStore.Controllers
                 return RedirectToAction("Truyen", "Admin");
             }
         }
+        [HttpPost]
+        [ValidateInput(false)]
+        public ActionResult Suatruyen(TRUYEN truyen, HttpPostedFileBase fileUpload)
+        {
+                if (fileUpload == null)
+                {
+                    ViewBag.Thongbao = "Vui lòng chọn ảnh bìa";
+                    return View();
+                }
+                else
+                {
+                    if (ModelState.IsValid)
+                    {
+                        var fileName = Path.GetFileName(fileUpload.FileName);
+                        var path = Path.Combine(Server.MapPath("~/assets/img/ImagesBody"), fileName);
+                        if (System.IO.File.Exists(path))
+                            ViewBag.Thongbao = "Hình ảnh đã tồn tại";
+                        else
+                        {
+                            fileUpload.SaveAs(path);
+                        }
+                        truyen.Anhbia = fileName;
+                        db.TRUYENs.InsertOnSubmit(truyen);
+                        db.SubmitChanges();
+                    }
+                    return RedirectToAction("Truyen");
+                }
+            }
+        }
+
 
     }
-}

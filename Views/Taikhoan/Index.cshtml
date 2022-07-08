@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<div style="margin-left: 400px; margin-top : 200px;">
+<div style="margin-left: 300px; margin-top : 200px;">
     <h2 style="color: red;">QUẢN LÝ DANH SÁCH TÀI KHOẢN</h2>
 
     <p>
@@ -24,6 +24,12 @@
             <th>
                 MẬT KHẨU
             </th>
+            <th>
+                ĐỊA CHỈ
+            </th>
+            <th>
+                SỐ ĐIỆN THOẠI
+            </th>
             <th></th>
         </tr>
 
@@ -39,6 +45,14 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Matkhau)
+
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Diachi)
+
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sodienthoai)
 
         </td>
         <td>

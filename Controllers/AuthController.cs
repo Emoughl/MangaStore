@@ -132,5 +132,15 @@ namespace MangaStore.Controllers
             }
             return Quenmatkhau();
         }
+        public ActionResult Thongtin()
+        {
+            return View();
+        }
+        public ActionResult DangXuat()
+        {
+            Session["Email"] = null;
+            return RedirectToAction("Index", "Body");
+
+        }
     }
 }

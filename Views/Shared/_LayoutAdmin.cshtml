@@ -19,18 +19,12 @@
 </head>
 <body id="page-top">
     <div id="wrapper" style="background-color: aliceblue ">
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar" style="line-height: 2;">
             <li class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html"></li>
             <li class="sidebar-brand-icon rotate-n-15">
             </li>
-            <li class="sidebar-brand-text mx-3" style="font-size: 30px;color: black;">Admin <sup>Nhóm 7</sup></li>
 
             <li class="sidebar-divider my-0">
-            <li class="nav-item active">
-                <a class="nav-link" href="@Url.Action("Index", "Admin")">
-                    <span>Quản Lý </span>
-                </a>
-            </li>
             <li class="sidebar-divider">
                 <div class="sidebar-heading" style="color: white;font-size: initial;">
                     Tài Khoản
@@ -40,9 +34,12 @@
                     <span>Quản Lí Tài Khoản</span>
                 </a>
             </li>
+            <li class="sidebar-heading" style="color: white;font-size: initial;">
+                __________________
+            </li>
             <li class="sidebar-divider">
                 <div class="sidebar-heading" style="color: white;font-size: initial;">
-                    Chức Năng Chính
+                    Chức Năng
                 </div>
             <li class="nav-item">
                 <a class="nav-link collapsed" href="@Url.Action("Index", "Theloai")">
@@ -60,6 +57,40 @@
                     <span>Quản Lí Truyện</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="@Url.Action("Index", "Truyentheotheloai")">
+                    <span>Xếp Truyện Theo Thể Loại</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("Index", "Truyentheonhaxuatban")">
+                    <span>Xếp Truyện Theo Nhà Xuất Bản </span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("Index", "Truyentheogiatien")">
+                    <span>Xếp Truyện Theo Giá Tiền</span>
+                </a>
+            </li>
+            <li class="sidebar-heading" style="color: white;font-size: initial;">
+                __________________
+            </li>
+            <li class="sidebar-divider">
+                <div class="sidebar-heading" style="color: white;font-size: initial;">
+                    Tình Trạng
+                </div>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="@Url.Action("Index", "Truyenbanchay")">
+                    <span>Truyện Bán Chạy</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("Index", "Truyennoibat")">
+                    <span>Truyện Nổi Bật</span>
+                </a>
+            </li>
+
 
         </ul>
         @RenderBody()

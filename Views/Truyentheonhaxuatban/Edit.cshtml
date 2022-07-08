@@ -1,0 +1,50 @@
+﻿@model MangaStore.Models.MAQUANHE
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>CHỈNH SỬA TRUYỆN THEO NHÀ XUẤT BẢN KHÁC</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.MaQH)
+    <div class="form-group">
+       ID Nhà Xuất Bản
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.MaQH, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.MaQH, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+       MÃ Nhà Xuất Bản
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.MaNXB, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.MaNXB, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+       Mã Truyện
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.MaTruyen, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.MaTruyen, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    </div>
+</div>
+}

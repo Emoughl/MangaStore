@@ -32,7 +32,8 @@
             <label id="signinPasswordLabel1" class="form-label" for="signinPassword1">Mật Khẩu</label>
             <div class="input-wrapper">
                 <i class="fas fa-lock"></i>
-                <input type="password" class="form-control rounded-0 height-4 px-4" name="password" id="signinPassword" placeholder="Hãy Nhập Mật Khẩu" aria-label="Hãy Nhập Mật Khẩu" aria-describedby="signinPasswordLabel1" required>
+                <input id="password-field" type="password" class="form-control" name="password" value="">
+                <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                 @ViewData["Loi2"]
             </div>
         </div>
@@ -44,7 +45,8 @@
             <label id="signupConfirmPasswordLabel" class="form-label" for="signupConfirmPassword">Xác Nhận Mật Khẩu</label>
             <div class="input-wrapper">
                 <i class="fas fa-unlock"></i>
-                <input type="password" class="form-control rounded-0 height-4 px-4" name="confirmPassword" id="signupConfirmPassword" placeholder="Hãy Nhập Lại Mật Khẩu" aria-label="Hãy Nhập Lại Mật Khẩu" aria-describedby="signupConfirmPasswordLabel" required>
+                <input id="password-field-2" type="password" class="form-control" name="password" value="">
+                <span toggle="#password-field-2" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                 @ViewData["Loi3"]
             </div>
         </div>
@@ -54,7 +56,7 @@
             <label id="signupConfirmPasswordLabel" class="form-label" for="signupConfirmPassword">Địa Chỉ</label>
             <div class="input-wrapper">
                 <i class="fas fa-home"></i>
-                <input type="diachi" class="form-control rounded-0 height-4 px-4" name="diachi" id="signupdiachi" placeholder="Hãy Nhập Địa Chỉ" aria-label="Hãy Nhập Lại Mật Khẩu" aria-describedby="signupConfirmPasswordLabel" required>
+                <input type="text" class="form-control rounded-0 height-4 px-4" name="diachi" id="signupdiachi" placeholder="Hãy Nhập Địa Chỉ" aria-label="Hãy Nhập Lại Mật Khẩu" aria-describedby="signupConfirmPasswordLabel" required>
                 @ViewData["Loi4"]
             </div>
         </div>
@@ -64,7 +66,7 @@
             <label id="signupConfirmPasswordLabel" class="form-label" for="signupConfirmPassword">Số Điện Thoại</label>
             <div class="input-wrapper">
                 <i class="fas fa-phone-alt"></i>
-                <input type="sodienthoai" class="form-control rounded-0 height-4 px-4" name="sodienthoai" id="signupsodienthoai" placeholder="Hãy Nhập Số Điện Thoại" aria-label="Hãy Nhập Lại Mật Khẩu" aria-describedby="signupConfirmPasswordLabel" required>
+                <input type="number" class="form-control rounded-0 height-4 px-4" name="sodienthoai" id="signupsodienthoai" placeholder="Hãy Nhập Số Điện Thoại" aria-label="Hãy Nhập Lại Mật Khẩu" aria-describedby="signupConfirmPasswordLabel" required>
                 @ViewData["Loi5"]
             </div>
         </div>
@@ -91,7 +93,40 @@
                 }
             });
         });
+        $(".toggle-password").click(function () {
+
+            $(this).toggleClass("fa-eye fa-eye-slash");
+            var input = $($(this).attr("toggle"));
+            if (input.attr("type") == "password") {
+                input.attr("type", "text");
+            } else {
+                input.attr("type", "password");
+            }
+        });
+        $(".toggle-password-2").click(function () {
+
+            $(this).toggleClass("fa-eye fa-eye-slash");
+            var input = $($(this).attr("toggle"));
+            if (input.attr("type") == "password") {
+                input.attr("type", "text");
+            } else {
+                input.attr("type", "password");
+            }
+        });
     </script>
+    <style>
+        .field-icon {
+            margin-left: -25px;
+            margin-top: -25px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .container {
+            padding-top: 50px;
+            margin: auto;
+        }
+    </style>
 </div>
     }
 </div>

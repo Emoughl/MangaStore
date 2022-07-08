@@ -1,0 +1,49 @@
+﻿@model MangaStore.Models.IDNoiBat
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<div style="margin-left: 500px; margin-top : 200px;">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>TẠO TRUYỆN NỔI BẬT</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                ID Nổi Bật
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.idNoiBat1, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.idNoiBat1, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                Mã Nổi Bật
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.MaNoiBat, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.MaNoiBat, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                Mã Truyện
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.MaTruyen, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.MaTruyen, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Tạo" class="btn btn-default" />
+                    | @Html.ActionLink("Trở Lại", "Index")
+                </div>
+            </div>
+        </div>
+    }
+</div>

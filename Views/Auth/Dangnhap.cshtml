@@ -32,7 +32,8 @@
                     <label id="signinPasswordLabel" class="form-label" for="signinPassword">Mật Khẩu</label>
                     <div class="input-wrapper">
                         <i class="fas fa-lock"></i>
-                        <input type="password" class="form-control rounded-0 height-4 px-4" name="password" id="signinPassword" placeholder="Nhập Mật Khẩu" aria-label="Nhập Mật Khẩu" aria-describedby="signinPasswordLabel" required>
+                        <input id="password-field" type="password" class="form-control" name="password" value="">
+                        <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                         @ViewData["Loi2"]
                     </div>
                 </div>
@@ -63,5 +64,30 @@
             <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-layout="rounded" data-auto-logout-link="true" data-use-continue-as="false"></div>
 
         </div>
+        <script>
+            $(".toggle-password").click(function () {
+
+                $(this).toggleClass("fa-eye fa-eye-slash");
+                var input = $($(this).attr("toggle"));
+                if (input.attr("type") == "password") {
+                    input.attr("type", "text");
+                } else {
+                    input.attr("type", "password");
+                }
+            });
+        </script>
+        <style>
+            .field-icon {
+                margin-left: -25px;
+                margin-top: -25px;
+                position: relative;
+                z-index: 2;
+            }
+
+            .container {
+                padding-top: 50px;
+                margin: auto;
+            }
+        </style>
     }
 </div>

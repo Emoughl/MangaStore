@@ -70,7 +70,6 @@ namespace MangaStore.Controllers
                           select gt;
             return View(truyen.ToPagedList(pageNum, pageSize));
         }
-        [HttpPost]
         public ActionResult Search(String a)
         {
             var truyen = data.TRUYENs.Where(s => s.TenTruyen.Contains(a)).ToList();

@@ -1,0 +1,14 @@
+﻿@model MangaStore.Models.User
+@{
+    ViewBag.Title = "Thongtin";
+    Layout = "~/Views/Shared/_LayoutManga.cshtml";
+    var us = Session["Email"] as MangaStore.Models.User; }
+
+}
+
+@{ if (us != null)
+    {
+
+        <h2>Xin chào : @us.Email</h2>
+        @Html.ActionLink("Đăng xuất", "DangXuat", "Auth") } }
+

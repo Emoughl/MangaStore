@@ -31,6 +31,20 @@
         <dd>
             @Html.DisplayFor(model => model.Matkhau)
         </dd>
+        <dt>
+            Địa Chỉ :
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Diachi)
+        <dt>
+            Số Điện Thoại
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sodienthoai)
+        </dd>
+
 
     </dl>
 
@@ -39,7 +53,7 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <input type="submit" value="Xóa" class="btn btn-default" /> |
             @Html.ActionLink("Quay Lại", "Index")
         </div>
     }

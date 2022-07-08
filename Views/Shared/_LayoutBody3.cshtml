@@ -1,6 +1,4 @@
-﻿@using MangaStore.Models
-@using PagedList.Mvc;
-@model PagedList.PagedList<TRUYEN>
+﻿@model IEnumerable<MangaStore.Models.TRUYEN>
 <div class="bg-gray-200 space-2 space-lg-3" id="truyen-noi-bat">
     <div class="container ">
         <div class="d-md-flex justify-content-between">
@@ -61,36 +59,6 @@
                         </li>
                     }
                 </ul>
-                Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber)/@Model.PageCount
-                <ul class="pagination pagination__custom justify-content-md-center flex-nowrap flex-md-wrap overflow-auto overflow-md-visble">
-                    <li class="MenuTrang">
-                        @Html.PagedListPager(Model, page => Url.Action("Noibattheo", "Body", new { page = page }))
-                        <script>
-                            window.addEventListener('load', () => {
-                                $('#truyen-noi-bat .MenuTrang .pagination li a').click(async (e) => {
-                                    e.preventDefault();
-                                    const res = await fetch(e.target.href);
-                                    const body = $(await res.text()).find('#truyen-noi-bat .products').html();
-                                    $('#truyen-noi-bat .products').html(body);
-                                });
-                            });
-                        </script>
-                    </li>
-                </ul>
-                <style>
-                    .MenuTrang li {
-                        display: inline;
-                    }
-
-                    .pagination > li > a, .pagination > li > span {
-                        padding: 6px 24px;
-                        border: 1px solid #ddd;
-                        background-color: #ffffff;
-                        text-decoration: none;
-                        float: right;
-                        font-size: 25px;
-                    }
-                </style>
             </div>
         </div>
     </div>

@@ -1,0 +1,50 @@
+﻿@model MangaStore.Models.MACOMIC
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<div style="margin-left: 500px; margin-top : 200px;">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>THÊM THỂ LOẠI CHO TRUYỆN</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                Mã MC
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.MC, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.MC, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                Mã Thể Loại
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.MaTL, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.MaTL, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                Mã Truyện
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.MaTruyen, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.MaTruyen, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Tạo" class="btn btn-default" /> |
+                    @Html.ActionLink("Trở Lại", "Index")
+                </div>
+            </div>
+        </div>
+    }
+    </div>
+

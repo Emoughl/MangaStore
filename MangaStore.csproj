@@ -139,6 +139,9 @@
     <Compile Include="Controllers\TaikhoanController.cs" />
     <Compile Include="Controllers\TheloaiController.cs" />
     <Compile Include="Controllers\ThichController.cs" />
+    <Compile Include="Controllers\TruyennoibatController.cs" />
+    <Compile Include="Controllers\TruyentheonhaxuatbanController.cs" />
+    <Compile Include="Controllers\TruyentheotheloaiController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -405,9 +408,25 @@
     <Content Include="Views\Admin\Themmoitruyen.cshtml" />
     <Content Include="Views\Admin\Xoatruyen.cshtml" />
     <Content Include="Views\Admin\Suatruyen.cshtml" />
+    <Content Include="Views\Auth\Thongtin.cshtml" />
+    <Content Include="Views\Auth\DangXuat.cshtml" />
+    <Content Include="Views\Truyentheotheloai\Index.cshtml" />
+    <Content Include="Views\Truyentheotheloai\Create.cshtml" />
+    <Content Include="Views\Truyentheotheloai\Delete.cshtml" />
+    <Content Include="Views\Truyentheotheloai\Edit.cshtml" />
+    <Content Include="Views\Truyennoibat\Index.cshtml" />
+    <Content Include="Views\Truyennoibat\Create.cshtml" />
+    <Content Include="Views\Truyennoibat\Delete.cshtml" />
+    <Content Include="Views\Truyennoibat\Edit.cshtml" />
+    <Content Include="Views\Truyentheonhaxuatban\Index.cshtml" />
+    <Content Include="Views\Truyentheonhaxuatban\Create.cshtml" />
+    <Content Include="Views\Truyentheonhaxuatban\Delete.cshtml" />
+    <Content Include="Views\Truyentheonhaxuatban\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Truyenbanchay\" />
+    <Folder Include="Views\Truyentheogiatien\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

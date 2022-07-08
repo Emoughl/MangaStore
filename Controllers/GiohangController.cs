@@ -130,12 +130,16 @@ namespace MangaStore.Controllers
             var ngaygiao = String.Format("{0:MM/dd/yyyy}", collection["Ngaygiao"]);
             ddh.Ngaygiao = DateTime.Parse(ngaygiao);
             db.DONDATHANGs.InsertOnSubmit(ddh);
+            ddh.Tinhtranggiaohang = false;
+            ddh.Dathanhtoan = false;
             db.SubmitChanges();        
             foreach (var item in gh)
             {
                 CHITIETDONHANG ctdh = new CHITIETDONHANG();
                 ctdh.MaDonHang = ddh.MaDonHang;
                 ctdh.MaTruyen = item.iMaTruyen;
+                ctdh.SoLuong = item.iSoluong;
+                ctdh.Dongia = (decimal)item.dDongia;
                 db.CHITIETDONHANGs.InsertOnSubmit(ctdh);
             }
             db.SubmitChanges();

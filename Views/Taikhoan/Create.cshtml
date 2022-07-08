@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<div style="margin-left: 400px; margin-top : 200px;">
+<div style="margin-left: 500px; margin-top : 250px;">
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
@@ -14,36 +14,45 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.MaUser, htmlAttributes: new { @class = "control-label col-md-2" })
+            Mã Tài Khoản
             <div class="col-md-10">
                 @Html.EditorFor(model => model.MaUser, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.MaUser, "", new { @class = "text-danger" })
             </div>
         </div>
         <div class="form-group">
-            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+            Email
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
             </div>
         </div>
         <div class="form-group">
-            @Html.LabelFor(model => model.Matkhau, htmlAttributes: new { @class = "control-label col-md-2" })
+            Mật Khẩu
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Matkhau, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Matkhau, "", new { @class = "text-danger" })
             </div>
         </div>
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Cập Nhật" class="btn btn-default" />
+            Địa Chỉ
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Diachi, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Diachi, "", new { @class = "text-danger" })
             </div>
+        </div>
+        <div class="form-group">
+            Số Điện Thoại
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Sodienthoai, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Sodienthoai, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Cập Nhật" class="btn btn-default" />
+            | @Html.ActionLink("Quay Lại", "Index")
         </div>
     </div>
     }
-
-    <div>
-        @Html.ActionLink("Quay Lại", "Index")
-    </div>
 </div>
 
